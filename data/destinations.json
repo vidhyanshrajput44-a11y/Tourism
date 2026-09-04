@@ -1,0 +1,66 @@
+[
+  {
+    "destination_id": "taj_mahal",
+    "name": "Taj Mahal",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "max_capacity": 40000,
+    "base_footfall": 18000
+  },
+  {
+    "destination_id": "jaipur_city_palace",
+    "name": "Jaipur City Palace",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "max_capacity": 25000,
+    "base_footfall": 12000
+  },
+  {
+    "destination_id": "goa_baga_beach",
+    "name": "Goa Baga Beach",
+    "city": "North Goa",
+    "state": "Goa",
+    "max_capacity": 35000,
+    "base_footfall": 15000
+  },
+  {
+    "destination_id": "kerala_backwaters",
+    "name": "Kerala Backwaters (Alleppey)",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "max_capacity": 18000,
+    "base_footfall": 8000
+  },
+  {
+    "destination_id": "varanasi_ghats",
+    "name": "Varanasi Ghats",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "max_capacity": 30000,
+    "base_footfall": 14000
+  },
+  {
+    "destination_id": "hampi_ruins",
+    "name": "Hampi Ruins",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "max_capacity": 15000,
+    "base_footfall": 6000
+  },
+  {
+    "destination_id": "manali",
+    "name": "Manali",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "max_capacity": 22000,
+    "base_footfall": 10000
+  },
+  {
+    "destination_id": "mysore_palace",
+    "name": "Mysore Palace",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "max_capacity": 24000,
+    "base_footfall": 11000
+  }
+]

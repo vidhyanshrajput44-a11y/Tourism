@@ -1,0 +1,14 @@
+{
+  "xgboost": {
+    "mae": 2152.78,
+    "rmse": 2883.01,
+    "train_rows": 6060,
+    "test_rows": 1516
+  },
+  "prophet": {
+    "mae": 2017.02,
+    "rmse": 2619.48,
+    "skipped": false
+  },
+  "best_model": "prophet"
+}
