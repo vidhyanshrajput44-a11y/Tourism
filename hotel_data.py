@@ -4,44 +4,10 @@ from datetime import datetime, timedelta
 import random
 import httpx
 import os
+import json
 
-# Base hotels mapping
-HOTELS_DB = {
-    "taj_mahal": [
-        {"hotel_id": "h_taj_1", "name": "The Oberoi Amarvilas", "star_rating": 5.0, "total_rooms": 102, "base_price": 45000},
-        {"hotel_id": "h_taj_2", "name": "Taj Hotel & Convention", "star_rating": 5.0, "total_rooms": 239, "base_price": 12000},
-        {"hotel_id": "h_taj_3", "name": "Joey's Hostel Agra", "star_rating": 3.0, "total_rooms": 45, "base_price": 800}
-    ],
-    "jaipur_city_palace": [
-        {"hotel_id": "h_jai_1", "name": "Rambagh Palace", "star_rating": 5.0, "total_rooms": 78, "base_price": 55000},
-        {"hotel_id": "h_jai_2", "name": "Zostel Jaipur", "star_rating": 3.5, "total_rooms": 60, "base_price": 1100}
-    ],
-    "goa_baga_beach": [
-        {"hotel_id": "h_goa_1", "name": "Taj Holiday Village", "star_rating": 5.0, "total_rooms": 142, "base_price": 18000},
-        {"hotel_id": "h_goa_2", "name": "Baga Beach Resort", "star_rating": 4.0, "total_rooms": 80, "base_price": 6000},
-        {"hotel_id": "h_goa_3", "name": "HostelCrowd Goa", "star_rating": 3.0, "total_rooms": 120, "base_price": 900}
-    ],
-    "kerala_backwaters": [
-        {"hotel_id": "h_ker_1", "name": "Kumarakom Lake Resort", "star_rating": 5.0, "total_rooms": 59, "base_price": 25000},
-        {"hotel_id": "h_ker_2", "name": "Alleppey Houseboat Stays", "star_rating": 4.0, "total_rooms": 20, "base_price": 8000}
-    ],
-    "varanasi_ghats": [
-        {"hotel_id": "h_var_1", "name": "BrijRama Palace", "star_rating": 5.0, "total_rooms": 32, "base_price": 22000},
-        {"hotel_id": "h_var_2", "name": "Ganges Inn", "star_rating": 3.0, "total_rooms": 40, "base_price": 2500}
-    ],
-    "hampi_ruins": [
-        {"hotel_id": "h_ham_1", "name": "Evolve Back Hampi", "star_rating": 5.0, "total_rooms": 46, "base_price": 30000},
-        {"hotel_id": "h_ham_2", "name": "Heritage Resort Hampi", "star_rating": 4.0, "total_rooms": 50, "base_price": 8000}
-    ],
-    "manali": [
-        {"hotel_id": "h_man_1", "name": "Span Resort & Spa", "star_rating": 5.0, "total_rooms": 36, "base_price": 15000},
-        {"hotel_id": "h_man_2", "name": "Zostel Manali", "star_rating": 3.0, "total_rooms": 70, "base_price": 1000}
-    ],
-    "mysore_palace": [
-        {"hotel_id": "h_mys_1", "name": "Lalitha Mahal Palace", "star_rating": 4.5, "total_rooms": 54, "base_price": 9000},
-        {"hotel_id": "h_mys_2", "name": "Southern Star Mysore", "star_rating": 4.0, "total_rooms": 105, "base_price": 5000}
-    ]
-}
+with open("hotels_db_dump.json", "r") as f:
+    HOTELS_DB = json.load(f)
 
 def generate_hotel_training_data():
     """Generates ~1 year of synthetic daily occupancy data per hotel."""

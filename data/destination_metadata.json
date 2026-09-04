@@ -584,5 +584,2303 @@
       "family",
       "couple"
     ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_1",
+    "name": "Agra Observatory 1",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "religious",
+    "tags": [
+      "nature",
+      "peaceful",
+      "scenic"
+    ],
+    "latitude": 27.248,
+    "longitude": 77.8984,
+    "average_visit_duration_hours": 1.2,
+    "ideal_for": [
+      "adventure",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_2",
+    "name": "Agra Art Gallery 2",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "wildlife",
+    "tags": [
+      "crowded",
+      "shopping",
+      "photography"
+    ],
+    "latitude": 27.0755,
+    "longitude": 78.0322,
+    "average_visit_duration_hours": 1.7,
+    "ideal_for": [
+      "solo",
+      "adventure",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_3",
+    "name": "Agra Riverfront 3",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "wildlife",
+    "tags": [
+      "history",
+      "crowded",
+      "adventure"
+    ],
+    "latitude": 27.1912,
+    "longitude": 78.0445,
+    "average_visit_duration_hours": 3.8,
+    "ideal_for": [
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_4",
+    "name": "Agra Observatory 4",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "religious",
+    "tags": [
+      "shopping",
+      "history",
+      "peaceful"
+    ],
+    "latitude": 27.2214,
+    "longitude": 78.1198,
+    "average_visit_duration_hours": 2.8,
+    "ideal_for": [
+      "adventure",
+      "couple",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_5",
+    "name": "Agra Museum 5",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "heritage",
+    "tags": [
+      "nature",
+      "photography",
+      "architecture"
+    ],
+    "latitude": 27.1387,
+    "longitude": 78.1747,
+    "average_visit_duration_hours": 3.3,
+    "ideal_for": [
+      "adventure",
+      "family",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_6",
+    "name": "Agra Bird Sanctuary 6",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "beach",
+    "tags": [
+      "adventure",
+      "shopping",
+      "crowded"
+    ],
+    "latitude": 27.229,
+    "longitude": 78.1103,
+    "average_visit_duration_hours": 3.8,
+    "ideal_for": [
+      "solo",
+      "family",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_7",
+    "name": "Agra Memorial 7",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "wildlife",
+    "tags": [
+      "adventure",
+      "peaceful",
+      "shopping"
+    ],
+    "latitude": 27.3232,
+    "longitude": 77.895,
+    "average_visit_duration_hours": 1.7,
+    "ideal_for": [
+      "family",
+      "adventure",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_8",
+    "name": "Agra Local Market 8",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "wildlife",
+    "tags": [
+      "nature",
+      "crowded",
+      "architecture"
+    ],
+    "latitude": 27.221,
+    "longitude": 77.9839,
+    "average_visit_duration_hours": 2.2,
+    "ideal_for": [
+      "couple",
+      "adventure",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_9",
+    "name": "Agra Memorial 9",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "wildlife",
+    "tags": [
+      "sunset",
+      "photography",
+      "crowded"
+    ],
+    "latitude": 27.1397,
+    "longitude": 77.9193,
+    "average_visit_duration_hours": 3.6,
+    "ideal_for": [
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_10",
+    "name": "Agra Fort Ruins 10",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "beach",
+    "tags": [
+      "scenic",
+      "sunset",
+      "history"
+    ],
+    "latitude": 27.1835,
+    "longitude": 78.1391,
+    "average_visit_duration_hours": 1.3,
+    "ideal_for": [
+      "solo",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_11",
+    "name": "Agra National Park 11",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "heritage",
+    "tags": [
+      "architecture",
+      "sunset",
+      "crowded"
+    ],
+    "latitude": 27.2882,
+    "longitude": 78.02,
+    "average_visit_duration_hours": 2.0,
+    "ideal_for": [
+      "couple",
+      "adventure",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_12",
+    "name": "Agra Fort Ruins 12",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "hill-station",
+    "tags": [
+      "photography",
+      "history",
+      "adventure"
+    ],
+    "latitude": 27.3026,
+    "longitude": 77.9435,
+    "average_visit_duration_hours": 3.1,
+    "ideal_for": [
+      "solo",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_13",
+    "name": "Agra Viewpoint 13",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "heritage",
+    "tags": [
+      "adventure",
+      "architecture",
+      "history"
+    ],
+    "latitude": 27.1886,
+    "longitude": 78.049,
+    "average_visit_duration_hours": 3.8,
+    "ideal_for": [
+      "couple",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_14",
+    "name": "Agra Handicraft Village 14",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "religious",
+    "tags": [
+      "photography",
+      "shopping",
+      "history"
+    ],
+    "latitude": 27.0864,
+    "longitude": 78.155,
+    "average_visit_duration_hours": 2.0,
+    "ideal_for": [
+      "solo",
+      "adventure",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_taj_mahal_15",
+    "name": "Agra Handicraft Village 15",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "religious",
+    "tags": [
+      "peaceful",
+      "crowded",
+      "adventure"
+    ],
+    "latitude": 27.0869,
+    "longitude": 77.8944,
+    "average_visit_duration_hours": 1.9,
+    "ideal_for": [
+      "couple",
+      "family",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_1",
+    "name": "Jaipur Cultural Center 1",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "heritage",
+    "tags": [
+      "nature",
+      "history",
+      "scenic"
+    ],
+    "latitude": 26.8965,
+    "longitude": 75.9782,
+    "average_visit_duration_hours": 1.3,
+    "ideal_for": [
+      "family",
+      "couple",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_2",
+    "name": "Jaipur Heritage Walk 2",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "beach",
+    "tags": [
+      "nature",
+      "peaceful",
+      "crowded"
+    ],
+    "latitude": 27.0168,
+    "longitude": 75.8286,
+    "average_visit_duration_hours": 2.8,
+    "ideal_for": [
+      "family",
+      "couple",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_3",
+    "name": "Jaipur Botanical Garden 3",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "religious",
+    "tags": [
+      "crowded",
+      "photography",
+      "adventure"
+    ],
+    "latitude": 26.9966,
+    "longitude": 75.9255,
+    "average_visit_duration_hours": 2.4,
+    "ideal_for": [
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_4",
+    "name": "Jaipur Heritage Walk 4",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "beach",
+    "tags": [
+      "crowded",
+      "architecture",
+      "peaceful"
+    ],
+    "latitude": 26.9292,
+    "longitude": 75.8426,
+    "average_visit_duration_hours": 2.7,
+    "ideal_for": [
+      "couple",
+      "family",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_5",
+    "name": "Jaipur Viewpoint 5",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "religious",
+    "tags": [
+      "peaceful",
+      "crowded",
+      "adventure"
+    ],
+    "latitude": 26.9614,
+    "longitude": 75.7711,
+    "average_visit_duration_hours": 1.9,
+    "ideal_for": [
+      "couple",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_6",
+    "name": "Jaipur Riverfront 6",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "hill-station",
+    "tags": [
+      "architecture",
+      "peaceful",
+      "history"
+    ],
+    "latitude": 26.881,
+    "longitude": 75.8971,
+    "average_visit_duration_hours": 1.8,
+    "ideal_for": [
+      "adventure",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_7",
+    "name": "Jaipur Fort Ruins 7",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "religious",
+    "tags": [
+      "shopping",
+      "peaceful",
+      "crowded"
+    ],
+    "latitude": 26.8621,
+    "longitude": 75.8495,
+    "average_visit_duration_hours": 1.9,
+    "ideal_for": [
+      "couple",
+      "family",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_8",
+    "name": "Jaipur Aquarium 8",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "wildlife",
+    "tags": [
+      "peaceful",
+      "scenic",
+      "history"
+    ],
+    "latitude": 27.0697,
+    "longitude": 75.703,
+    "average_visit_duration_hours": 3.5,
+    "ideal_for": [
+      "couple",
+      "family",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_9",
+    "name": "Jaipur Heritage Walk 9",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "beach",
+    "tags": [
+      "history",
+      "scenic",
+      "nature"
+    ],
+    "latitude": 27.1009,
+    "longitude": 75.8811,
+    "average_visit_duration_hours": 2.8,
+    "ideal_for": [
+      "couple",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_10",
+    "name": "Jaipur Fort Ruins 10",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "religious",
+    "tags": [
+      "history",
+      "shopping",
+      "adventure"
+    ],
+    "latitude": 27.0114,
+    "longitude": 75.9885,
+    "average_visit_duration_hours": 1.3,
+    "ideal_for": [
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_11",
+    "name": "Jaipur Bird Sanctuary 11",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "beach",
+    "tags": [
+      "crowded",
+      "sunset",
+      "nature"
+    ],
+    "latitude": 27.0129,
+    "longitude": 75.8532,
+    "average_visit_duration_hours": 2.9,
+    "ideal_for": [
+      "solo",
+      "couple",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_12",
+    "name": "Jaipur Art Gallery 12",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "wildlife",
+    "tags": [
+      "shopping",
+      "photography",
+      "history"
+    ],
+    "latitude": 26.8464,
+    "longitude": 75.7699,
+    "average_visit_duration_hours": 1.9,
+    "ideal_for": [
+      "couple",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_13",
+    "name": "Jaipur Art Gallery 13",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "heritage",
+    "tags": [
+      "architecture",
+      "adventure",
+      "peaceful"
+    ],
+    "latitude": 26.8374,
+    "longitude": 75.8373,
+    "average_visit_duration_hours": 3.4,
+    "ideal_for": [
+      "solo",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_14",
+    "name": "Jaipur Spice Garden 14",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "beach",
+    "tags": [
+      "photography",
+      "crowded",
+      "sunset"
+    ],
+    "latitude": 27.0091,
+    "longitude": 75.9672,
+    "average_visit_duration_hours": 2.9,
+    "ideal_for": [
+      "solo",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_jaipur_city_palace_15",
+    "name": "Jaipur Museum 15",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "category": "beach",
+    "tags": [
+      "peaceful",
+      "crowded",
+      "nature"
+    ],
+    "latitude": 27.1112,
+    "longitude": 75.7841,
+    "average_visit_duration_hours": 2.7,
+    "ideal_for": [
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_1",
+    "name": "North Goa Aquarium 1",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "heritage",
+    "tags": [
+      "crowded",
+      "adventure",
+      "scenic"
+    ],
+    "latitude": 15.6157,
+    "longitude": 73.6171,
+    "average_visit_duration_hours": 2.1,
+    "ideal_for": [
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_2",
+    "name": "North Goa Temple 2",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "hill-station",
+    "tags": [
+      "adventure",
+      "peaceful",
+      "architecture"
+    ],
+    "latitude": 15.4723,
+    "longitude": 73.9017,
+    "average_visit_duration_hours": 2.7,
+    "ideal_for": [
+      "solo",
+      "adventure",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_3",
+    "name": "North Goa Cultural Center 3",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "wildlife",
+    "tags": [
+      "history",
+      "scenic",
+      "shopping"
+    ],
+    "latitude": 15.6049,
+    "longitude": 73.8326,
+    "average_visit_duration_hours": 1.6,
+    "ideal_for": [
+      "couple",
+      "adventure",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_4",
+    "name": "North Goa Heritage Walk 4",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "hill-station",
+    "tags": [
+      "history",
+      "sunset",
+      "crowded"
+    ],
+    "latitude": 15.4431,
+    "longitude": 73.889,
+    "average_visit_duration_hours": 2.7,
+    "ideal_for": [
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_5",
+    "name": "North Goa Palace 5",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "heritage",
+    "tags": [
+      "history",
+      "architecture",
+      "scenic"
+    ],
+    "latitude": 15.658,
+    "longitude": 73.7752,
+    "average_visit_duration_hours": 1.6,
+    "ideal_for": [
+      "couple",
+      "family",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_6",
+    "name": "North Goa Art Gallery 6",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "wildlife",
+    "tags": [
+      "sunset",
+      "architecture",
+      "photography"
+    ],
+    "latitude": 15.4892,
+    "longitude": 73.7409,
+    "average_visit_duration_hours": 3.9,
+    "ideal_for": [
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_7",
+    "name": "North Goa Aquarium 7",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "religious",
+    "tags": [
+      "nature",
+      "scenic",
+      "adventure"
+    ],
+    "latitude": 15.4547,
+    "longitude": 73.8724,
+    "average_visit_duration_hours": 1.4,
+    "ideal_for": [
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_8",
+    "name": "North Goa Aquarium 8",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "religious",
+    "tags": [
+      "adventure",
+      "shopping",
+      "history"
+    ],
+    "latitude": 15.5072,
+    "longitude": 73.6283,
+    "average_visit_duration_hours": 3.8,
+    "ideal_for": [
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_9",
+    "name": "North Goa Local Market 9",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "wildlife",
+    "tags": [
+      "photography",
+      "crowded",
+      "sunset"
+    ],
+    "latitude": 15.6021,
+    "longitude": 73.8545,
+    "average_visit_duration_hours": 1.1,
+    "ideal_for": [
+      "solo",
+      "family",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_10",
+    "name": "North Goa Aquarium 10",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "hill-station",
+    "tags": [
+      "peaceful",
+      "nature",
+      "history"
+    ],
+    "latitude": 15.6181,
+    "longitude": 73.8601,
+    "average_visit_duration_hours": 2.1,
+    "ideal_for": [
+      "couple",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_11",
+    "name": "North Goa Observatory 11",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "hill-station",
+    "tags": [
+      "nature",
+      "shopping",
+      "crowded"
+    ],
+    "latitude": 15.6792,
+    "longitude": 73.7638,
+    "average_visit_duration_hours": 3.4,
+    "ideal_for": [
+      "family",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_12",
+    "name": "North Goa Local Market 12",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "wildlife",
+    "tags": [
+      "shopping",
+      "adventure",
+      "nature"
+    ],
+    "latitude": 15.5122,
+    "longitude": 73.7864,
+    "average_visit_duration_hours": 3.7,
+    "ideal_for": [
+      "family",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_13",
+    "name": "North Goa Local Market 13",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "wildlife",
+    "tags": [
+      "crowded",
+      "nature",
+      "scenic"
+    ],
+    "latitude": 15.5607,
+    "longitude": 73.7126,
+    "average_visit_duration_hours": 3.2,
+    "ideal_for": [
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_14",
+    "name": "North Goa Cultural Center 14",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "heritage",
+    "tags": [
+      "photography",
+      "adventure",
+      "nature"
+    ],
+    "latitude": 15.6209,
+    "longitude": 73.67,
+    "average_visit_duration_hours": 2.5,
+    "ideal_for": [
+      "solo",
+      "adventure",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_goa_baga_beach_15",
+    "name": "North Goa Observatory 15",
+    "city": "North Goa",
+    "state": "Goa",
+    "category": "beach",
+    "tags": [
+      "scenic",
+      "shopping",
+      "sunset"
+    ],
+    "latitude": 15.669,
+    "longitude": 73.8917,
+    "average_visit_duration_hours": 4.0,
+    "ideal_for": [
+      "family",
+      "adventure",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_1",
+    "name": "Alleppey Handicraft Village 1",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "hill-station",
+    "tags": [
+      "architecture",
+      "peaceful",
+      "photography"
+    ],
+    "latitude": 9.4761,
+    "longitude": 76.197,
+    "average_visit_duration_hours": 1.4,
+    "ideal_for": [
+      "solo",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_2",
+    "name": "Alleppey Art Gallery 2",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "heritage",
+    "tags": [
+      "photography",
+      "nature",
+      "shopping"
+    ],
+    "latitude": 9.4138,
+    "longitude": 76.2337,
+    "average_visit_duration_hours": 2.0,
+    "ideal_for": [
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_3",
+    "name": "Alleppey Temple 3",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "beach",
+    "tags": [
+      "peaceful",
+      "architecture",
+      "crowded"
+    ],
+    "latitude": 9.3903,
+    "longitude": 76.2264,
+    "average_visit_duration_hours": 3.3,
+    "ideal_for": [
+      "couple",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_4",
+    "name": "Alleppey Bird Sanctuary 4",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "wildlife",
+    "tags": [
+      "photography",
+      "crowded",
+      "shopping"
+    ],
+    "latitude": 9.4983,
+    "longitude": 76.3321,
+    "average_visit_duration_hours": 4.0,
+    "ideal_for": [
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_5",
+    "name": "Alleppey Bird Sanctuary 5",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "religious",
+    "tags": [
+      "architecture",
+      "crowded",
+      "peaceful"
+    ],
+    "latitude": 9.5078,
+    "longitude": 76.2418,
+    "average_visit_duration_hours": 2.5,
+    "ideal_for": [
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_6",
+    "name": "Alleppey Bird Sanctuary 6",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "religious",
+    "tags": [
+      "peaceful",
+      "photography",
+      "architecture"
+    ],
+    "latitude": 9.5511,
+    "longitude": 76.235,
+    "average_visit_duration_hours": 2.0,
+    "ideal_for": [
+      "adventure",
+      "family",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_7",
+    "name": "Alleppey Fort Ruins 7",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "hill-station",
+    "tags": [
+      "nature",
+      "scenic",
+      "peaceful"
+    ],
+    "latitude": 9.3669,
+    "longitude": 76.4425,
+    "average_visit_duration_hours": 1.3,
+    "ideal_for": [
+      "family",
+      "couple",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_8",
+    "name": "Alleppey Local Market 8",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "hill-station",
+    "tags": [
+      "sunset",
+      "history",
+      "crowded"
+    ],
+    "latitude": 9.3667,
+    "longitude": 76.4205,
+    "average_visit_duration_hours": 2.4,
+    "ideal_for": [
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_9",
+    "name": "Alleppey Fort Ruins 9",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "hill-station",
+    "tags": [
+      "sunset",
+      "architecture",
+      "history"
+    ],
+    "latitude": 9.5656,
+    "longitude": 76.4555,
+    "average_visit_duration_hours": 1.6,
+    "ideal_for": [
+      "solo",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_10",
+    "name": "Alleppey Palace 10",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "beach",
+    "tags": [
+      "nature",
+      "shopping",
+      "peaceful"
+    ],
+    "latitude": 9.4619,
+    "longitude": 76.3834,
+    "average_visit_duration_hours": 1.8,
+    "ideal_for": [
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_11",
+    "name": "Alleppey Art Gallery 11",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "heritage",
+    "tags": [
+      "nature",
+      "shopping",
+      "photography"
+    ],
+    "latitude": 9.4376,
+    "longitude": 76.3632,
+    "average_visit_duration_hours": 2.0,
+    "ideal_for": [
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_12",
+    "name": "Alleppey Art Gallery 12",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "heritage",
+    "tags": [
+      "scenic",
+      "photography",
+      "shopping"
+    ],
+    "latitude": 9.6135,
+    "longitude": 76.4603,
+    "average_visit_duration_hours": 2.0,
+    "ideal_for": [
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_13",
+    "name": "Alleppey Palace 13",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "heritage",
+    "tags": [
+      "nature",
+      "crowded",
+      "architecture"
+    ],
+    "latitude": 9.3904,
+    "longitude": 76.3725,
+    "average_visit_duration_hours": 2.5,
+    "ideal_for": [
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_14",
+    "name": "Alleppey National Park 14",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "heritage",
+    "tags": [
+      "architecture",
+      "peaceful",
+      "adventure"
+    ],
+    "latitude": 9.4327,
+    "longitude": 76.373,
+    "average_visit_duration_hours": 1.8,
+    "ideal_for": [
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_kerala_backwaters_15",
+    "name": "Alleppey Palace 15",
+    "city": "Alleppey",
+    "state": "Kerala",
+    "category": "heritage",
+    "tags": [
+      "architecture",
+      "peaceful",
+      "shopping"
+    ],
+    "latitude": 9.5596,
+    "longitude": 76.2993,
+    "average_visit_duration_hours": 1.0,
+    "ideal_for": [
+      "couple",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_1",
+    "name": "Varanasi Palace 1",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "wildlife",
+    "tags": [
+      "history",
+      "photography",
+      "shopping"
+    ],
+    "latitude": 25.2052,
+    "longitude": 83.0581,
+    "average_visit_duration_hours": 2.7,
+    "ideal_for": [
+      "adventure",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_2",
+    "name": "Varanasi Cultural Center 2",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "heritage",
+    "tags": [
+      "scenic",
+      "crowded",
+      "peaceful"
+    ],
+    "latitude": 25.4202,
+    "longitude": 82.9075,
+    "average_visit_duration_hours": 2.7,
+    "ideal_for": [
+      "adventure",
+      "family",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_3",
+    "name": "Varanasi Palace 3",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "religious",
+    "tags": [
+      "scenic",
+      "peaceful",
+      "nature"
+    ],
+    "latitude": 25.4225,
+    "longitude": 83.1508,
+    "average_visit_duration_hours": 2.4,
+    "ideal_for": [
+      "couple",
+      "solo",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_4",
+    "name": "Varanasi Stepwell 4",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "heritage",
+    "tags": [
+      "scenic",
+      "shopping",
+      "adventure"
+    ],
+    "latitude": 25.2597,
+    "longitude": 82.9604,
+    "average_visit_duration_hours": 1.5,
+    "ideal_for": [
+      "couple",
+      "adventure",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_5",
+    "name": "Varanasi Handicraft Village 5",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "heritage",
+    "tags": [
+      "adventure",
+      "photography",
+      "peaceful"
+    ],
+    "latitude": 25.4597,
+    "longitude": 82.9671,
+    "average_visit_duration_hours": 1.2,
+    "ideal_for": [
+      "couple",
+      "family",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_6",
+    "name": "Varanasi Handicraft Village 6",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "wildlife",
+    "tags": [
+      "nature",
+      "scenic",
+      "sunset"
+    ],
+    "latitude": 25.1723,
+    "longitude": 83.0159,
+    "average_visit_duration_hours": 1.1,
+    "ideal_for": [
+      "family",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_7",
+    "name": "Varanasi National Park 7",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "heritage",
+    "tags": [
+      "scenic",
+      "photography",
+      "shopping"
+    ],
+    "latitude": 25.2469,
+    "longitude": 82.9753,
+    "average_visit_duration_hours": 2.0,
+    "ideal_for": [
+      "couple",
+      "solo",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_8",
+    "name": "Varanasi Botanical Garden 8",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "hill-station",
+    "tags": [
+      "sunset",
+      "scenic",
+      "nature"
+    ],
+    "latitude": 25.2904,
+    "longitude": 83.097,
+    "average_visit_duration_hours": 2.4,
+    "ideal_for": [
+      "solo",
+      "adventure",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_9",
+    "name": "Varanasi Stepwell 9",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "religious",
+    "tags": [
+      "shopping",
+      "architecture",
+      "nature"
+    ],
+    "latitude": 25.426,
+    "longitude": 82.9109,
+    "average_visit_duration_hours": 2.1,
+    "ideal_for": [
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_10",
+    "name": "Varanasi Temple 10",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "wildlife",
+    "tags": [
+      "architecture",
+      "adventure",
+      "photography"
+    ],
+    "latitude": 25.1812,
+    "longitude": 82.9227,
+    "average_visit_duration_hours": 3.1,
+    "ideal_for": [
+      "family",
+      "couple",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_11",
+    "name": "Varanasi Handicraft Village 11",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "religious",
+    "tags": [
+      "adventure",
+      "nature",
+      "peaceful"
+    ],
+    "latitude": 25.1837,
+    "longitude": 83.0957,
+    "average_visit_duration_hours": 3.7,
+    "ideal_for": [
+      "solo",
+      "couple",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_12",
+    "name": "Varanasi Cultural Center 12",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "religious",
+    "tags": [
+      "crowded",
+      "peaceful",
+      "scenic"
+    ],
+    "latitude": 25.2566,
+    "longitude": 83.1361,
+    "average_visit_duration_hours": 2.4,
+    "ideal_for": [
+      "couple",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_13",
+    "name": "Varanasi Handicraft Village 13",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "beach",
+    "tags": [
+      "photography",
+      "shopping",
+      "adventure"
+    ],
+    "latitude": 25.4329,
+    "longitude": 82.9383,
+    "average_visit_duration_hours": 3.9,
+    "ideal_for": [
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_14",
+    "name": "Varanasi Temple 14",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "beach",
+    "tags": [
+      "history",
+      "crowded",
+      "shopping"
+    ],
+    "latitude": 25.3387,
+    "longitude": 82.9057,
+    "average_visit_duration_hours": 2.6,
+    "ideal_for": [
+      "couple",
+      "adventure",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_varanasi_ghats_15",
+    "name": "Varanasi Heritage Walk 15",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "category": "hill-station",
+    "tags": [
+      "nature",
+      "scenic",
+      "adventure"
+    ],
+    "latitude": 25.3048,
+    "longitude": 82.932,
+    "average_visit_duration_hours": 2.7,
+    "ideal_for": [
+      "family",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_1",
+    "name": "Hampi Viewpoint 1",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "beach",
+    "tags": [
+      "scenic",
+      "architecture",
+      "photography"
+    ],
+    "latitude": 15.4697,
+    "longitude": 76.3338,
+    "average_visit_duration_hours": 1.1,
+    "ideal_for": [
+      "couple",
+      "solo",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_2",
+    "name": "Hampi Memorial 2",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "religious",
+    "tags": [
+      "architecture",
+      "photography",
+      "crowded"
+    ],
+    "latitude": 15.299,
+    "longitude": 76.494,
+    "average_visit_duration_hours": 1.3,
+    "ideal_for": [
+      "couple",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_3",
+    "name": "Hampi Local Market 3",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "beach",
+    "tags": [
+      "photography",
+      "shopping",
+      "adventure"
+    ],
+    "latitude": 15.3725,
+    "longitude": 76.3514,
+    "average_visit_duration_hours": 1.2,
+    "ideal_for": [
+      "family",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_4",
+    "name": "Hampi Riverfront 4",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "heritage",
+    "tags": [
+      "nature",
+      "peaceful",
+      "scenic"
+    ],
+    "latitude": 15.4536,
+    "longitude": 76.4059,
+    "average_visit_duration_hours": 1.1,
+    "ideal_for": [
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_5",
+    "name": "Hampi Botanical Garden 5",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "beach",
+    "tags": [
+      "architecture",
+      "scenic",
+      "shopping"
+    ],
+    "latitude": 15.2039,
+    "longitude": 76.3628,
+    "average_visit_duration_hours": 1.8,
+    "ideal_for": [
+      "solo",
+      "couple",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_6",
+    "name": "Hampi Botanical Garden 6",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "religious",
+    "tags": [
+      "peaceful",
+      "scenic",
+      "history"
+    ],
+    "latitude": 15.2354,
+    "longitude": 76.4172,
+    "average_visit_duration_hours": 1.3,
+    "ideal_for": [
+      "couple",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_7",
+    "name": "Hampi Heritage Walk 7",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "hill-station",
+    "tags": [
+      "scenic",
+      "shopping",
+      "history"
+    ],
+    "latitude": 15.2266,
+    "longitude": 76.4572,
+    "average_visit_duration_hours": 1.2,
+    "ideal_for": [
+      "couple",
+      "adventure",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_8",
+    "name": "Hampi Palace 8",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "heritage",
+    "tags": [
+      "adventure",
+      "history",
+      "architecture"
+    ],
+    "latitude": 15.368,
+    "longitude": 76.595,
+    "average_visit_duration_hours": 1.7,
+    "ideal_for": [
+      "solo",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_9",
+    "name": "Hampi Bird Sanctuary 9",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "heritage",
+    "tags": [
+      "architecture",
+      "shopping",
+      "peaceful"
+    ],
+    "latitude": 15.4817,
+    "longitude": 76.5683,
+    "average_visit_duration_hours": 1.0,
+    "ideal_for": [
+      "family",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_10",
+    "name": "Hampi Viewpoint 10",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "wildlife",
+    "tags": [
+      "photography",
+      "adventure",
+      "sunset"
+    ],
+    "latitude": 15.4563,
+    "longitude": 76.5373,
+    "average_visit_duration_hours": 3.0,
+    "ideal_for": [
+      "family",
+      "solo",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_11",
+    "name": "Hampi Spice Garden 11",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "beach",
+    "tags": [
+      "shopping",
+      "architecture",
+      "photography"
+    ],
+    "latitude": 15.4207,
+    "longitude": 76.414,
+    "average_visit_duration_hours": 3.6,
+    "ideal_for": [
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_12",
+    "name": "Hampi National Park 12",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "hill-station",
+    "tags": [
+      "adventure",
+      "crowded",
+      "history"
+    ],
+    "latitude": 15.2525,
+    "longitude": 76.5525,
+    "average_visit_duration_hours": 1.6,
+    "ideal_for": [
+      "couple",
+      "adventure",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_13",
+    "name": "Hampi Memorial 13",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "hill-station",
+    "tags": [
+      "scenic",
+      "photography",
+      "sunset"
+    ],
+    "latitude": 15.1991,
+    "longitude": 76.5615,
+    "average_visit_duration_hours": 3.1,
+    "ideal_for": [
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_14",
+    "name": "Hampi Cultural Center 14",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "wildlife",
+    "tags": [
+      "crowded",
+      "adventure",
+      "nature"
+    ],
+    "latitude": 15.2424,
+    "longitude": 76.5912,
+    "average_visit_duration_hours": 3.2,
+    "ideal_for": [
+      "adventure",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_hampi_ruins_15",
+    "name": "Hampi Local Market 15",
+    "city": "Hampi",
+    "state": "Karnataka",
+    "category": "wildlife",
+    "tags": [
+      "crowded",
+      "shopping",
+      "adventure"
+    ],
+    "latitude": 15.354,
+    "longitude": 76.3352,
+    "average_visit_duration_hours": 1.4,
+    "ideal_for": [
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_1",
+    "name": "Manali Temple 1",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "beach",
+    "tags": [
+      "scenic",
+      "history",
+      "photography"
+    ],
+    "latitude": 32.3364,
+    "longitude": 77.1297,
+    "average_visit_duration_hours": 3.5,
+    "ideal_for": [
+      "family",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_2",
+    "name": "Manali Lake 2",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "heritage",
+    "tags": [
+      "adventure",
+      "nature",
+      "photography"
+    ],
+    "latitude": 32.3813,
+    "longitude": 77.2047,
+    "average_visit_duration_hours": 2.2,
+    "ideal_for": [
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_3",
+    "name": "Manali Museum 3",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "beach",
+    "tags": [
+      "architecture",
+      "scenic",
+      "nature"
+    ],
+    "latitude": 32.2658,
+    "longitude": 77.2288,
+    "average_visit_duration_hours": 3.2,
+    "ideal_for": [
+      "solo",
+      "couple",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_4",
+    "name": "Manali Riverfront 4",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "beach",
+    "tags": [
+      "scenic",
+      "peaceful",
+      "crowded"
+    ],
+    "latitude": 32.1034,
+    "longitude": 77.2371,
+    "average_visit_duration_hours": 2.4,
+    "ideal_for": [
+      "family",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_5",
+    "name": "Manali National Park 5",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "hill-station",
+    "tags": [
+      "nature",
+      "shopping",
+      "architecture"
+    ],
+    "latitude": 32.1744,
+    "longitude": 77.1204,
+    "average_visit_duration_hours": 2.1,
+    "ideal_for": [
+      "couple",
+      "adventure",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_6",
+    "name": "Manali Bird Sanctuary 6",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "heritage",
+    "tags": [
+      "architecture",
+      "nature",
+      "sunset"
+    ],
+    "latitude": 32.2951,
+    "longitude": 77.2493,
+    "average_visit_duration_hours": 2.8,
+    "ideal_for": [
+      "solo",
+      "couple",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_7",
+    "name": "Manali Art Gallery 7",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "hill-station",
+    "tags": [
+      "nature",
+      "shopping",
+      "crowded"
+    ],
+    "latitude": 32.1598,
+    "longitude": 77.2832,
+    "average_visit_duration_hours": 3.8,
+    "ideal_for": [
+      "couple",
+      "family",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_8",
+    "name": "Manali Museum 8",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "religious",
+    "tags": [
+      "architecture",
+      "history",
+      "adventure"
+    ],
+    "latitude": 32.1816,
+    "longitude": 77.2971,
+    "average_visit_duration_hours": 1.7,
+    "ideal_for": [
+      "family",
+      "solo",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_9",
+    "name": "Manali Museum 9",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "hill-station",
+    "tags": [
+      "nature",
+      "scenic",
+      "adventure"
+    ],
+    "latitude": 32.0956,
+    "longitude": 77.0859,
+    "average_visit_duration_hours": 1.2,
+    "ideal_for": [
+      "couple",
+      "solo",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_10",
+    "name": "Manali Bird Sanctuary 10",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "religious",
+    "tags": [
+      "crowded",
+      "shopping",
+      "architecture"
+    ],
+    "latitude": 32.2733,
+    "longitude": 77.1361,
+    "average_visit_duration_hours": 2.3,
+    "ideal_for": [
+      "solo",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_11",
+    "name": "Manali Cultural Center 11",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "heritage",
+    "tags": [
+      "nature",
+      "architecture",
+      "photography"
+    ],
+    "latitude": 32.1731,
+    "longitude": 77.2891,
+    "average_visit_duration_hours": 3.5,
+    "ideal_for": [
+      "adventure",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_12",
+    "name": "Manali Observatory 12",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "religious",
+    "tags": [
+      "shopping",
+      "history",
+      "scenic"
+    ],
+    "latitude": 32.1766,
+    "longitude": 77.2455,
+    "average_visit_duration_hours": 1.7,
+    "ideal_for": [
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_13",
+    "name": "Manali Handicraft Village 13",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "hill-station",
+    "tags": [
+      "scenic",
+      "history",
+      "shopping"
+    ],
+    "latitude": 32.1793,
+    "longitude": 77.0613,
+    "average_visit_duration_hours": 1.8,
+    "ideal_for": [
+      "adventure",
+      "couple",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_14",
+    "name": "Manali Bird Sanctuary 14",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "hill-station",
+    "tags": [
+      "sunset",
+      "shopping",
+      "nature"
+    ],
+    "latitude": 32.1941,
+    "longitude": 77.0453,
+    "average_visit_duration_hours": 3.5,
+    "ideal_for": [
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_manali_15",
+    "name": "Manali Cultural Center 15",
+    "city": "Manali",
+    "state": "Himachal Pradesh",
+    "category": "hill-station",
+    "tags": [
+      "shopping",
+      "photography",
+      "adventure"
+    ],
+    "latitude": 32.2431,
+    "longitude": 77.0783,
+    "average_visit_duration_hours": 2.1,
+    "ideal_for": [
+      "adventure",
+      "family",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_1",
+    "name": "Mysuru Spice Garden 1",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "wildlife",
+    "tags": [
+      "nature",
+      "history",
+      "crowded"
+    ],
+    "latitude": 12.3181,
+    "longitude": 76.6553,
+    "average_visit_duration_hours": 3.2,
+    "ideal_for": [
+      "adventure",
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_2",
+    "name": "Mysuru Palace 2",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "beach",
+    "tags": [
+      "shopping",
+      "photography",
+      "adventure"
+    ],
+    "latitude": 12.434,
+    "longitude": 76.6282,
+    "average_visit_duration_hours": 1.6,
+    "ideal_for": [
+      "solo",
+      "couple",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_3",
+    "name": "Mysuru Lake 3",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "wildlife",
+    "tags": [
+      "scenic",
+      "crowded",
+      "nature"
+    ],
+    "latitude": 12.3448,
+    "longitude": 76.5579,
+    "average_visit_duration_hours": 3.8,
+    "ideal_for": [
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_4",
+    "name": "Mysuru Handicraft Village 4",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "hill-station",
+    "tags": [
+      "photography",
+      "shopping",
+      "nature"
+    ],
+    "latitude": 12.1587,
+    "longitude": 76.723,
+    "average_visit_duration_hours": 2.3,
+    "ideal_for": [
+      "solo",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_5",
+    "name": "Mysuru Viewpoint 5",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "beach",
+    "tags": [
+      "scenic",
+      "photography",
+      "adventure"
+    ],
+    "latitude": 12.4257,
+    "longitude": 76.6335,
+    "average_visit_duration_hours": 3.4,
+    "ideal_for": [
+      "adventure",
+      "family",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_6",
+    "name": "Mysuru Spice Garden 6",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "heritage",
+    "tags": [
+      "shopping",
+      "history",
+      "architecture"
+    ],
+    "latitude": 12.3403,
+    "longitude": 76.6042,
+    "average_visit_duration_hours": 1.6,
+    "ideal_for": [
+      "solo"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_7",
+    "name": "Mysuru Botanical Garden 7",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "religious",
+    "tags": [
+      "history",
+      "sunset",
+      "scenic"
+    ],
+    "latitude": 12.1888,
+    "longitude": 76.5085,
+    "average_visit_duration_hours": 3.1,
+    "ideal_for": [
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_8",
+    "name": "Mysuru Handicraft Village 8",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "religious",
+    "tags": [
+      "crowded",
+      "adventure",
+      "photography"
+    ],
+    "latitude": 12.2117,
+    "longitude": 76.5789,
+    "average_visit_duration_hours": 1.4,
+    "ideal_for": [
+      "family",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_9",
+    "name": "Mysuru Bird Sanctuary 9",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "heritage",
+    "tags": [
+      "sunset",
+      "nature",
+      "photography"
+    ],
+    "latitude": 12.3704,
+    "longitude": 76.6028,
+    "average_visit_duration_hours": 3.7,
+    "ideal_for": [
+      "solo",
+      "adventure",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_10",
+    "name": "Mysuru Local Market 10",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "wildlife",
+    "tags": [
+      "architecture",
+      "crowded",
+      "peaceful"
+    ],
+    "latitude": 12.4319,
+    "longitude": 76.7302,
+    "average_visit_duration_hours": 3.5,
+    "ideal_for": [
+      "family",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_11",
+    "name": "Mysuru Palace 11",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "beach",
+    "tags": [
+      "sunset",
+      "architecture",
+      "scenic"
+    ],
+    "latitude": 12.2969,
+    "longitude": 76.7287,
+    "average_visit_duration_hours": 1.1,
+    "ideal_for": [
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_12",
+    "name": "Mysuru Spice Garden 12",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "beach",
+    "tags": [
+      "history",
+      "photography",
+      "architecture"
+    ],
+    "latitude": 12.2342,
+    "longitude": 76.7499,
+    "average_visit_duration_hours": 1.3,
+    "ideal_for": [
+      "couple",
+      "family"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_13",
+    "name": "Mysuru Memorial 13",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "wildlife",
+    "tags": [
+      "peaceful",
+      "crowded",
+      "sunset"
+    ],
+    "latitude": 12.4175,
+    "longitude": 76.6948,
+    "average_visit_duration_hours": 1.7,
+    "ideal_for": [
+      "couple",
+      "family",
+      "adventure"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_14",
+    "name": "Mysuru Memorial 14",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "heritage",
+    "tags": [
+      "scenic",
+      "nature",
+      "history"
+    ],
+    "latitude": 12.3132,
+    "longitude": 76.7586,
+    "average_visit_duration_hours": 2.5,
+    "ideal_for": [
+      "family",
+      "solo",
+      "couple"
+    ]
+  },
+  {
+    "destination_id": "alt_mysore_palace_15",
+    "name": "Mysuru Bird Sanctuary 15",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "category": "religious",
+    "tags": [
+      "peaceful",
+      "architecture",
+      "scenic"
+    ],
+    "latitude": 12.2248,
+    "longitude": 76.7744,
+    "average_visit_duration_hours": 3.5,
+    "ideal_for": [
+      "solo",
+      "family",
+      "couple"
+    ]
   }
 ]

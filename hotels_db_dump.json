@@ -1,0 +1,1458 @@
+{
+    "taj_mahal": [
+        {
+            "hotel_id": "h_taj_1",
+            "name": "Comfort Hotel Agra",
+            "star_rating": 4.0,
+            "total_rooms": 158,
+            "base_price": 6685,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal1/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Comfort%20Hotel%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_2",
+            "name": "FabHotel Bhavan Agra",
+            "star_rating": 4.0,
+            "total_rooms": 165,
+            "base_price": 7712,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal2/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=FabHotel%20Bhavan%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_3",
+            "name": "Taj Palace Agra",
+            "star_rating": 3.0,
+            "total_rooms": 74,
+            "base_price": 3009,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal3/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Taj%20Palace%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_4",
+            "name": "Oyo Hotel Agra",
+            "star_rating": 4.5,
+            "total_rooms": 136,
+            "base_price": 19073,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal4/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Oyo%20Hotel%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_5",
+            "name": "Boutique Lodge Agra",
+            "star_rating": 4.5,
+            "total_rooms": 145,
+            "base_price": 22071,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal5/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Boutique%20Lodge%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_6",
+            "name": "Marriott View Agra",
+            "star_rating": 3.5,
+            "total_rooms": 143,
+            "base_price": 1739,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal6/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Marriott%20View%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_7",
+            "name": "FabHotel Hotel Agra",
+            "star_rating": 3.0,
+            "total_rooms": 171,
+            "base_price": 1007,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal7/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=FabHotel%20Hotel%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_8",
+            "name": "Zostel Inn Agra",
+            "star_rating": 4.5,
+            "total_rooms": 97,
+            "base_price": 28573,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal8/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Zostel%20Inn%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_9",
+            "name": "Suites Palace Agra",
+            "star_rating": 3.0,
+            "total_rooms": 212,
+            "base_price": 3686,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal9/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Suites%20Palace%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_10",
+            "name": "Oyo Lodge Agra",
+            "star_rating": 3.0,
+            "total_rooms": 215,
+            "base_price": 959,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal10/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Oyo%20Lodge%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_11",
+            "name": "Palace Hotel Agra",
+            "star_rating": 3.5,
+            "total_rooms": 68,
+            "base_price": 1729,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal11/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Palace%20Hotel%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_12",
+            "name": "Palace Villa Agra",
+            "star_rating": 3.0,
+            "total_rooms": 223,
+            "base_price": 2952,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal12/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Palace%20Villa%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_13",
+            "name": "Zostel Suites Agra",
+            "star_rating": 3.5,
+            "total_rooms": 195,
+            "base_price": 1187,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal13/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Zostel%20Suites%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_14",
+            "name": "Sunset Villa Agra",
+            "star_rating": 5.0,
+            "total_rooms": 143,
+            "base_price": 34679,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal14/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Sunset%20Villa%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_15",
+            "name": "Marriott View Agra",
+            "star_rating": 3.0,
+            "total_rooms": 36,
+            "base_price": 1882,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal15/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Marriott%20View%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_16",
+            "name": "Oberoi Palace Agra",
+            "star_rating": 4.0,
+            "total_rooms": 226,
+            "base_price": 8876,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal16/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Oberoi%20Palace%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_17",
+            "name": "Comfort Villa Agra",
+            "star_rating": 3.5,
+            "total_rooms": 61,
+            "base_price": 3593,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal17/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Comfort%20Villa%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_18",
+            "name": "Palace Hotel Agra",
+            "star_rating": 4.0,
+            "total_rooms": 177,
+            "base_price": 11461,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal18/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Palace%20Hotel%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_19",
+            "name": "Radisson Retreat Agra",
+            "star_rating": 4.5,
+            "total_rooms": 135,
+            "base_price": 33132,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal19/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Radisson%20Retreat%20Agra"
+        },
+        {
+            "hotel_id": "h_taj_20",
+            "name": "Budget Resort Agra",
+            "star_rating": 3.5,
+            "total_rooms": 150,
+            "base_price": 1396,
+            "image_url": "https://picsum.photos/seed/hoteltaj_mahal20/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCAGR&searchText=Budget%20Resort%20Agra"
+        }
+    ],
+    "jaipur_city_palace": [
+        {
+            "hotel_id": "h_jai_1",
+            "name": "Paradise Villa Jaipur",
+            "star_rating": 5.0,
+            "total_rooms": 218,
+            "base_price": 12273,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace1/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Paradise%20Villa%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_2",
+            "name": "Marriott Lodge Jaipur",
+            "star_rating": 4.5,
+            "total_rooms": 139,
+            "base_price": 28430,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace2/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Marriott%20Lodge%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_3",
+            "name": "Lemon Tree Inn Jaipur",
+            "star_rating": 4.0,
+            "total_rooms": 199,
+            "base_price": 9742,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace3/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Lemon%20Tree%20Inn%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_4",
+            "name": "Royal Retreat Jaipur",
+            "star_rating": 3.5,
+            "total_rooms": 226,
+            "base_price": 2042,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace4/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Royal%20Retreat%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_5",
+            "name": "Golden Hotel Jaipur",
+            "star_rating": 4.0,
+            "total_rooms": 51,
+            "base_price": 9836,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace5/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Golden%20Hotel%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_6",
+            "name": "Taj Suites Jaipur",
+            "star_rating": 3.0,
+            "total_rooms": 124,
+            "base_price": 2496,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace6/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Taj%20Suites%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_7",
+            "name": "Golden Resort Jaipur",
+            "star_rating": 4.0,
+            "total_rooms": 176,
+            "base_price": 10836,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace7/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Golden%20Resort%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_8",
+            "name": "Taj Resort Jaipur",
+            "star_rating": 4.0,
+            "total_rooms": 63,
+            "base_price": 10701,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace8/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Taj%20Resort%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_9",
+            "name": "Budget Inn Jaipur",
+            "star_rating": 3.0,
+            "total_rooms": 80,
+            "base_price": 1249,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace9/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Budget%20Inn%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_10",
+            "name": "Royal View Jaipur",
+            "star_rating": 5.0,
+            "total_rooms": 62,
+            "base_price": 29413,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace10/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Royal%20View%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_11",
+            "name": "Budget Retreat Jaipur",
+            "star_rating": 3.5,
+            "total_rooms": 47,
+            "base_price": 2508,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace11/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Budget%20Retreat%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_12",
+            "name": "Taj Palace Jaipur",
+            "star_rating": 5.0,
+            "total_rooms": 85,
+            "base_price": 21946,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace12/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Taj%20Palace%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_13",
+            "name": "Royal Inn Jaipur",
+            "star_rating": 4.0,
+            "total_rooms": 230,
+            "base_price": 8813,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace13/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Royal%20Inn%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_14",
+            "name": "Royal Suites Jaipur",
+            "star_rating": 4.0,
+            "total_rooms": 22,
+            "base_price": 7379,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace14/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Royal%20Suites%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_15",
+            "name": "Budget Villa Jaipur",
+            "star_rating": 5.0,
+            "total_rooms": 201,
+            "base_price": 29538,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace15/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Budget%20Villa%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_16",
+            "name": "Oberoi Bhavan Jaipur",
+            "star_rating": 3.5,
+            "total_rooms": 93,
+            "base_price": 2411,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace16/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Oberoi%20Bhavan%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_17",
+            "name": "Marriott Inn Jaipur",
+            "star_rating": 5.0,
+            "total_rooms": 240,
+            "base_price": 14909,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace17/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Marriott%20Inn%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_18",
+            "name": "Comfort Lodge Jaipur",
+            "star_rating": 5.0,
+            "total_rooms": 218,
+            "base_price": 14999,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace18/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Comfort%20Lodge%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_19",
+            "name": "Suites Suites Jaipur",
+            "star_rating": 3.0,
+            "total_rooms": 225,
+            "base_price": 2220,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace19/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Suites%20Suites%20Jaipur"
+        },
+        {
+            "hotel_id": "h_jai_20",
+            "name": "Heritage Palace Jaipur",
+            "star_rating": 5.0,
+            "total_rooms": 236,
+            "base_price": 20081,
+            "image_url": "https://picsum.photos/seed/hoteljaipur_city_palace20/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCJAI&searchText=Heritage%20Palace%20Jaipur"
+        }
+    ],
+    "goa_baga_beach": [
+        {
+            "hotel_id": "h_goa_1",
+            "name": "Heritage Palace Goa",
+            "star_rating": 4.5,
+            "total_rooms": 206,
+            "base_price": 12754,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach1/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Heritage%20Palace%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_2",
+            "name": "Comfort Hotel Goa",
+            "star_rating": 4.0,
+            "total_rooms": 144,
+            "base_price": 7636,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach2/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Comfort%20Hotel%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_3",
+            "name": "Suites Villa Goa",
+            "star_rating": 5.0,
+            "total_rooms": 33,
+            "base_price": 13569,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach3/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Suites%20Villa%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_4",
+            "name": "Luxury Retreat Goa",
+            "star_rating": 3.5,
+            "total_rooms": 161,
+            "base_price": 1723,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach4/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Luxury%20Retreat%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_5",
+            "name": "Luxury View Goa",
+            "star_rating": 4.0,
+            "total_rooms": 151,
+            "base_price": 8387,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach5/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Luxury%20View%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_6",
+            "name": "Marriott Hotel Goa",
+            "star_rating": 3.5,
+            "total_rooms": 194,
+            "base_price": 1140,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach6/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Marriott%20Hotel%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_7",
+            "name": "Paradise Lodge Goa",
+            "star_rating": 5.0,
+            "total_rooms": 39,
+            "base_price": 24092,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach7/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Paradise%20Lodge%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_8",
+            "name": "Sunset Inn Goa",
+            "star_rating": 3.5,
+            "total_rooms": 183,
+            "base_price": 3288,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach8/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Sunset%20Inn%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_9",
+            "name": "Holiday Resort Goa",
+            "star_rating": 3.5,
+            "total_rooms": 178,
+            "base_price": 2120,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach9/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Holiday%20Resort%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_10",
+            "name": "Budget Resort Goa",
+            "star_rating": 3.5,
+            "total_rooms": 165,
+            "base_price": 1684,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach10/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Budget%20Resort%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_11",
+            "name": "Palace Bhavan Goa",
+            "star_rating": 5.0,
+            "total_rooms": 90,
+            "base_price": 14832,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach11/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Palace%20Bhavan%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_12",
+            "name": "Holiday Hotel Goa",
+            "star_rating": 4.0,
+            "total_rooms": 161,
+            "base_price": 5093,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach12/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Holiday%20Hotel%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_13",
+            "name": "Resort Bhavan Goa",
+            "star_rating": 5.0,
+            "total_rooms": 221,
+            "base_price": 24540,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach13/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Resort%20Bhavan%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_14",
+            "name": "Resort Bhavan Goa",
+            "star_rating": 3.5,
+            "total_rooms": 237,
+            "base_price": 2958,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach14/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Resort%20Bhavan%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_15",
+            "name": "Suites Lodge Goa",
+            "star_rating": 4.5,
+            "total_rooms": 114,
+            "base_price": 23472,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach15/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Suites%20Lodge%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_16",
+            "name": "FabHotel Bhavan Goa",
+            "star_rating": 4.0,
+            "total_rooms": 101,
+            "base_price": 8059,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach16/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=FabHotel%20Bhavan%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_17",
+            "name": "Royal View Goa",
+            "star_rating": 3.0,
+            "total_rooms": 197,
+            "base_price": 936,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach17/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Royal%20View%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_18",
+            "name": "Radisson Villa Goa",
+            "star_rating": 3.5,
+            "total_rooms": 217,
+            "base_price": 2002,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach18/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Radisson%20Villa%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_19",
+            "name": "Palace Villa Goa",
+            "star_rating": 5.0,
+            "total_rooms": 67,
+            "base_price": 16610,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach19/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Palace%20Villa%20Goa"
+        },
+        {
+            "hotel_id": "h_goa_20",
+            "name": "Oberoi View Goa",
+            "star_rating": 5.0,
+            "total_rooms": 40,
+            "base_price": 30239,
+            "image_url": "https://picsum.photos/seed/hotelgoa_baga_beach20/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCGOA&searchText=Oberoi%20View%20Goa"
+        }
+    ],
+    "kerala_backwaters": [
+        {
+            "hotel_id": "h_ker_1",
+            "name": "Budget Inn Alleppey",
+            "star_rating": 4.5,
+            "total_rooms": 232,
+            "base_price": 11466,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters1/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Budget%20Inn%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_2",
+            "name": "Luxury Suites Alleppey",
+            "star_rating": 5.0,
+            "total_rooms": 241,
+            "base_price": 17199,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters2/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Luxury%20Suites%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_3",
+            "name": "Taj Lodge Alleppey",
+            "star_rating": 3.5,
+            "total_rooms": 125,
+            "base_price": 1668,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters3/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Taj%20Lodge%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_4",
+            "name": "Paradise Retreat Alleppey",
+            "star_rating": 3.5,
+            "total_rooms": 87,
+            "base_price": 3482,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters4/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Paradise%20Retreat%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_5",
+            "name": "Budget Inn Alleppey",
+            "star_rating": 4.0,
+            "total_rooms": 77,
+            "base_price": 9707,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters5/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Budget%20Inn%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_6",
+            "name": "Suites Villa Alleppey",
+            "star_rating": 5.0,
+            "total_rooms": 153,
+            "base_price": 33509,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters6/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Suites%20Villa%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_7",
+            "name": "Oberoi View Alleppey",
+            "star_rating": 3.5,
+            "total_rooms": 56,
+            "base_price": 3691,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters7/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Oberoi%20View%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_8",
+            "name": "Budget Lodge Alleppey",
+            "star_rating": 4.5,
+            "total_rooms": 117,
+            "base_price": 14659,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters8/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Budget%20Lodge%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_9",
+            "name": "Marriott Retreat Alleppey",
+            "star_rating": 4.0,
+            "total_rooms": 92,
+            "base_price": 10898,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters9/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Marriott%20Retreat%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_10",
+            "name": "Heritage Retreat Alleppey",
+            "star_rating": 3.5,
+            "total_rooms": 197,
+            "base_price": 1325,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters10/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Heritage%20Retreat%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_11",
+            "name": "Holiday Resort Alleppey",
+            "star_rating": 5.0,
+            "total_rooms": 196,
+            "base_price": 16053,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters11/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Holiday%20Resort%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_12",
+            "name": "Budget Inn Alleppey",
+            "star_rating": 5.0,
+            "total_rooms": 136,
+            "base_price": 33686,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters12/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Budget%20Inn%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_13",
+            "name": "Budget Retreat Alleppey",
+            "star_rating": 3.5,
+            "total_rooms": 149,
+            "base_price": 1296,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters13/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Budget%20Retreat%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_14",
+            "name": "Radisson Inn Alleppey",
+            "star_rating": 4.5,
+            "total_rooms": 95,
+            "base_price": 33758,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters14/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Radisson%20Inn%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_15",
+            "name": "ITC Bhavan Alleppey",
+            "star_rating": 5.0,
+            "total_rooms": 211,
+            "base_price": 34282,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters15/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=ITC%20Bhavan%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_16",
+            "name": "Boutique Hotel Alleppey",
+            "star_rating": 4.0,
+            "total_rooms": 190,
+            "base_price": 11502,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters16/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Boutique%20Hotel%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_17",
+            "name": "Comfort Lodge Alleppey",
+            "star_rating": 5.0,
+            "total_rooms": 128,
+            "base_price": 16679,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters17/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Comfort%20Lodge%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_18",
+            "name": "Comfort Palace Alleppey",
+            "star_rating": 4.5,
+            "total_rooms": 143,
+            "base_price": 23096,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters18/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Comfort%20Palace%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_19",
+            "name": "FabHotel Inn Alleppey",
+            "star_rating": 5.0,
+            "total_rooms": 239,
+            "base_price": 30597,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters19/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=FabHotel%20Inn%20Alleppey"
+        },
+        {
+            "hotel_id": "h_ker_20",
+            "name": "Paradise Resort Alleppey",
+            "star_rating": 3.5,
+            "total_rooms": 134,
+            "base_price": 1415,
+            "image_url": "https://picsum.photos/seed/hotelkerala_backwaters20/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCALP&searchText=Paradise%20Resort%20Alleppey"
+        }
+    ],
+    "varanasi_ghats": [
+        {
+            "hotel_id": "h_var_1",
+            "name": "Budget Lodge Varanasi",
+            "star_rating": 3.5,
+            "total_rooms": 80,
+            "base_price": 3225,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats1/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Budget%20Lodge%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_2",
+            "name": "Radisson Inn Varanasi",
+            "star_rating": 3.5,
+            "total_rooms": 195,
+            "base_price": 1190,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats2/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Radisson%20Inn%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_3",
+            "name": "FabHotel Inn Varanasi",
+            "star_rating": 4.5,
+            "total_rooms": 196,
+            "base_price": 15387,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats3/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=FabHotel%20Inn%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_4",
+            "name": "Taj Villa Varanasi",
+            "star_rating": 4.0,
+            "total_rooms": 229,
+            "base_price": 10581,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats4/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Taj%20Villa%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_5",
+            "name": "Oyo Villa Varanasi",
+            "star_rating": 4.5,
+            "total_rooms": 151,
+            "base_price": 28780,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats5/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Oyo%20Villa%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_6",
+            "name": "Lemon Tree View Varanasi",
+            "star_rating": 5.0,
+            "total_rooms": 204,
+            "base_price": 16624,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats6/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Lemon%20Tree%20View%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_7",
+            "name": "Comfort Palace Varanasi",
+            "star_rating": 4.5,
+            "total_rooms": 76,
+            "base_price": 19276,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats7/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Comfort%20Palace%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_8",
+            "name": "Budget Inn Varanasi",
+            "star_rating": 4.5,
+            "total_rooms": 215,
+            "base_price": 34172,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats8/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Budget%20Inn%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_9",
+            "name": "Palace View Varanasi",
+            "star_rating": 5.0,
+            "total_rooms": 232,
+            "base_price": 20569,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats9/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Palace%20View%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_10",
+            "name": "Inn Retreat Varanasi",
+            "star_rating": 3.0,
+            "total_rooms": 82,
+            "base_price": 1582,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats10/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Inn%20Retreat%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_11",
+            "name": "Golden Villa Varanasi",
+            "star_rating": 3.5,
+            "total_rooms": 245,
+            "base_price": 3735,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats11/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Golden%20Villa%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_12",
+            "name": "Heritage Bhavan Varanasi",
+            "star_rating": 3.5,
+            "total_rooms": 243,
+            "base_price": 2457,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats12/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Heritage%20Bhavan%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_13",
+            "name": "Zostel Bhavan Varanasi",
+            "star_rating": 4.0,
+            "total_rooms": 182,
+            "base_price": 11609,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats13/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Zostel%20Bhavan%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_14",
+            "name": "Budget Villa Varanasi",
+            "star_rating": 3.0,
+            "total_rooms": 148,
+            "base_price": 918,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats14/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Budget%20Villa%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_15",
+            "name": "Oberoi Palace Varanasi",
+            "star_rating": 3.5,
+            "total_rooms": 223,
+            "base_price": 3510,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats15/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Oberoi%20Palace%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_16",
+            "name": "Royal View Varanasi",
+            "star_rating": 4.5,
+            "total_rooms": 50,
+            "base_price": 17099,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats16/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Royal%20View%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_17",
+            "name": "Budget Resort Varanasi",
+            "star_rating": 3.5,
+            "total_rooms": 211,
+            "base_price": 2966,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats17/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Budget%20Resort%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_18",
+            "name": "ITC View Varanasi",
+            "star_rating": 3.0,
+            "total_rooms": 122,
+            "base_price": 3190,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats18/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=ITC%20View%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_19",
+            "name": "Oberoi Hotel Varanasi",
+            "star_rating": 4.0,
+            "total_rooms": 31,
+            "base_price": 8841,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats19/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Oberoi%20Hotel%20Varanasi"
+        },
+        {
+            "hotel_id": "h_var_20",
+            "name": "Suites Lodge Varanasi",
+            "star_rating": 5.0,
+            "total_rooms": 204,
+            "base_price": 25078,
+            "image_url": "https://picsum.photos/seed/hotelvaranasi_ghats20/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCVNS&searchText=Suites%20Lodge%20Varanasi"
+        }
+    ],
+    "hampi_ruins": [
+        {
+            "hotel_id": "h_ham_1",
+            "name": "Resort Inn Hampi",
+            "star_rating": 5.0,
+            "total_rooms": 120,
+            "base_price": 18863,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins1/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Resort%20Inn%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_2",
+            "name": "Grand View Hampi",
+            "star_rating": 4.0,
+            "total_rooms": 190,
+            "base_price": 11473,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins2/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Grand%20View%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_3",
+            "name": "Paradise Inn Hampi",
+            "star_rating": 3.0,
+            "total_rooms": 134,
+            "base_price": 2541,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins3/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Paradise%20Inn%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_4",
+            "name": "Budget View Hampi",
+            "star_rating": 5.0,
+            "total_rooms": 44,
+            "base_price": 10543,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins4/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Budget%20View%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_5",
+            "name": "Grand Hotel Hampi",
+            "star_rating": 4.5,
+            "total_rooms": 126,
+            "base_price": 33012,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins5/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Grand%20Hotel%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_6",
+            "name": "Oberoi Inn Hampi",
+            "star_rating": 5.0,
+            "total_rooms": 245,
+            "base_price": 34089,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins6/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Oberoi%20Inn%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_7",
+            "name": "Palace Bhavan Hampi",
+            "star_rating": 4.0,
+            "total_rooms": 119,
+            "base_price": 10650,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins7/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Palace%20Bhavan%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_8",
+            "name": "Lemon Tree Bhavan Hampi",
+            "star_rating": 3.5,
+            "total_rooms": 189,
+            "base_price": 3164,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins8/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Lemon%20Tree%20Bhavan%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_9",
+            "name": "ITC Palace Hampi",
+            "star_rating": 4.5,
+            "total_rooms": 181,
+            "base_price": 15876,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins9/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=ITC%20Palace%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_10",
+            "name": "Comfort Bhavan Hampi",
+            "star_rating": 5.0,
+            "total_rooms": 50,
+            "base_price": 16364,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins10/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Comfort%20Bhavan%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_11",
+            "name": "Royal Hotel Hampi",
+            "star_rating": 3.5,
+            "total_rooms": 172,
+            "base_price": 2417,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins11/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Royal%20Hotel%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_12",
+            "name": "Grand View Hampi",
+            "star_rating": 3.0,
+            "total_rooms": 51,
+            "base_price": 1009,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins12/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Grand%20View%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_13",
+            "name": "Grand Resort Hampi",
+            "star_rating": 5.0,
+            "total_rooms": 172,
+            "base_price": 33414,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins13/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Grand%20Resort%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_14",
+            "name": "Grand Bhavan Hampi",
+            "star_rating": 4.5,
+            "total_rooms": 65,
+            "base_price": 21470,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins14/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Grand%20Bhavan%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_15",
+            "name": "Oyo Lodge Hampi",
+            "star_rating": 3.5,
+            "total_rooms": 113,
+            "base_price": 2630,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins15/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Oyo%20Lodge%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_16",
+            "name": "Radisson Palace Hampi",
+            "star_rating": 5.0,
+            "total_rooms": 203,
+            "base_price": 25182,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins16/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Radisson%20Palace%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_17",
+            "name": "Hyatt Hotel Hampi",
+            "star_rating": 3.0,
+            "total_rooms": 130,
+            "base_price": 2489,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins17/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Hyatt%20Hotel%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_18",
+            "name": "Hyatt Hotel Hampi",
+            "star_rating": 4.5,
+            "total_rooms": 60,
+            "base_price": 24838,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins18/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Hyatt%20Hotel%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_19",
+            "name": "Grand Retreat Hampi",
+            "star_rating": 4.0,
+            "total_rooms": 175,
+            "base_price": 6056,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins19/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Grand%20Retreat%20Hampi"
+        },
+        {
+            "hotel_id": "h_ham_20",
+            "name": "Suites Bhavan Hampi",
+            "star_rating": 4.5,
+            "total_rooms": 135,
+            "base_price": 10871,
+            "image_url": "https://picsum.photos/seed/hotelhampi_ruins20/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCHPI&searchText=Suites%20Bhavan%20Hampi"
+        }
+    ],
+    "manali": [
+        {
+            "hotel_id": "h_man_1",
+            "name": "Oberoi Suites Manali",
+            "star_rating": 3.0,
+            "total_rooms": 245,
+            "base_price": 1935,
+            "image_url": "https://picsum.photos/seed/hotelmanali1/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Oberoi%20Suites%20Manali"
+        },
+        {
+            "hotel_id": "h_man_2",
+            "name": "Marriott Lodge Manali",
+            "star_rating": 3.0,
+            "total_rooms": 156,
+            "base_price": 1170,
+            "image_url": "https://picsum.photos/seed/hotelmanali2/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Marriott%20Lodge%20Manali"
+        },
+        {
+            "hotel_id": "h_man_3",
+            "name": "Radisson View Manali",
+            "star_rating": 3.5,
+            "total_rooms": 118,
+            "base_price": 1573,
+            "image_url": "https://picsum.photos/seed/hotelmanali3/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Radisson%20View%20Manali"
+        },
+        {
+            "hotel_id": "h_man_4",
+            "name": "Holiday View Manali",
+            "star_rating": 3.5,
+            "total_rooms": 21,
+            "base_price": 1744,
+            "image_url": "https://picsum.photos/seed/hotelmanali4/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Holiday%20View%20Manali"
+        },
+        {
+            "hotel_id": "h_man_5",
+            "name": "Heritage Retreat Manali",
+            "star_rating": 3.0,
+            "total_rooms": 35,
+            "base_price": 2946,
+            "image_url": "https://picsum.photos/seed/hotelmanali5/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Heritage%20Retreat%20Manali"
+        },
+        {
+            "hotel_id": "h_man_6",
+            "name": "Boutique Resort Manali",
+            "star_rating": 5.0,
+            "total_rooms": 143,
+            "base_price": 25104,
+            "image_url": "https://picsum.photos/seed/hotelmanali6/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Boutique%20Resort%20Manali"
+        },
+        {
+            "hotel_id": "h_man_7",
+            "name": "Taj Inn Manali",
+            "star_rating": 4.0,
+            "total_rooms": 42,
+            "base_price": 9781,
+            "image_url": "https://picsum.photos/seed/hotelmanali7/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Taj%20Inn%20Manali"
+        },
+        {
+            "hotel_id": "h_man_8",
+            "name": "Palace Hotel Manali",
+            "star_rating": 4.5,
+            "total_rooms": 196,
+            "base_price": 24809,
+            "image_url": "https://picsum.photos/seed/hotelmanali8/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Palace%20Hotel%20Manali"
+        },
+        {
+            "hotel_id": "h_man_9",
+            "name": "Oberoi Suites Manali",
+            "star_rating": 4.5,
+            "total_rooms": 144,
+            "base_price": 12398,
+            "image_url": "https://picsum.photos/seed/hotelmanali9/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Oberoi%20Suites%20Manali"
+        },
+        {
+            "hotel_id": "h_man_10",
+            "name": "Holiday Palace Manali",
+            "star_rating": 3.0,
+            "total_rooms": 117,
+            "base_price": 2116,
+            "image_url": "https://picsum.photos/seed/hotelmanali10/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Holiday%20Palace%20Manali"
+        },
+        {
+            "hotel_id": "h_man_11",
+            "name": "Paradise Lodge Manali",
+            "star_rating": 5.0,
+            "total_rooms": 64,
+            "base_price": 16499,
+            "image_url": "https://picsum.photos/seed/hotelmanali11/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Paradise%20Lodge%20Manali"
+        },
+        {
+            "hotel_id": "h_man_12",
+            "name": "Comfort View Manali",
+            "star_rating": 4.5,
+            "total_rooms": 34,
+            "base_price": 32127,
+            "image_url": "https://picsum.photos/seed/hotelmanali12/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Comfort%20View%20Manali"
+        },
+        {
+            "hotel_id": "h_man_13",
+            "name": "Holiday Resort Manali",
+            "star_rating": 3.0,
+            "total_rooms": 169,
+            "base_price": 2805,
+            "image_url": "https://picsum.photos/seed/hotelmanali13/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Holiday%20Resort%20Manali"
+        },
+        {
+            "hotel_id": "h_man_14",
+            "name": "Boutique Hotel Manali",
+            "star_rating": 4.0,
+            "total_rooms": 52,
+            "base_price": 5370,
+            "image_url": "https://picsum.photos/seed/hotelmanali14/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Boutique%20Hotel%20Manali"
+        },
+        {
+            "hotel_id": "h_man_15",
+            "name": "Luxury View Manali",
+            "star_rating": 5.0,
+            "total_rooms": 178,
+            "base_price": 24496,
+            "image_url": "https://picsum.photos/seed/hotelmanali15/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Luxury%20View%20Manali"
+        },
+        {
+            "hotel_id": "h_man_16",
+            "name": "Radisson View Manali",
+            "star_rating": 5.0,
+            "total_rooms": 148,
+            "base_price": 17903,
+            "image_url": "https://picsum.photos/seed/hotelmanali16/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Radisson%20View%20Manali"
+        },
+        {
+            "hotel_id": "h_man_17",
+            "name": "Radisson Inn Manali",
+            "star_rating": 4.0,
+            "total_rooms": 79,
+            "base_price": 9635,
+            "image_url": "https://picsum.photos/seed/hotelmanali17/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Radisson%20Inn%20Manali"
+        },
+        {
+            "hotel_id": "h_man_18",
+            "name": "Lemon Tree Villa Manali",
+            "star_rating": 5.0,
+            "total_rooms": 151,
+            "base_price": 15821,
+            "image_url": "https://picsum.photos/seed/hotelmanali18/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Lemon%20Tree%20Villa%20Manali"
+        },
+        {
+            "hotel_id": "h_man_19",
+            "name": "Oberoi Suites Manali",
+            "star_rating": 4.0,
+            "total_rooms": 24,
+            "base_price": 5564,
+            "image_url": "https://picsum.photos/seed/hotelmanali19/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Oberoi%20Suites%20Manali"
+        },
+        {
+            "hotel_id": "h_man_20",
+            "name": "Grand Suites Manali",
+            "star_rating": 3.0,
+            "total_rooms": 228,
+            "base_price": 1521,
+            "image_url": "https://picsum.photos/seed/hotelmanali20/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMAN&searchText=Grand%20Suites%20Manali"
+        }
+    ],
+    "mysore_palace": [
+        {
+            "hotel_id": "h_mys_1",
+            "name": "Luxury Palace Mysore",
+            "star_rating": 4.5,
+            "total_rooms": 196,
+            "base_price": 31952,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace1/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Luxury%20Palace%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_2",
+            "name": "FabHotel View Mysore",
+            "star_rating": 4.5,
+            "total_rooms": 92,
+            "base_price": 13805,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace2/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=FabHotel%20View%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_3",
+            "name": "Palace Inn Mysore",
+            "star_rating": 5.0,
+            "total_rooms": 250,
+            "base_price": 17716,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace3/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Palace%20Inn%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_4",
+            "name": "Resort Resort Mysore",
+            "star_rating": 3.0,
+            "total_rooms": 171,
+            "base_price": 1180,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace4/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Resort%20Resort%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_5",
+            "name": "Royal Bhavan Mysore",
+            "star_rating": 3.0,
+            "total_rooms": 81,
+            "base_price": 1487,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace5/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Royal%20Bhavan%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_6",
+            "name": "Suites View Mysore",
+            "star_rating": 4.0,
+            "total_rooms": 93,
+            "base_price": 6039,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace6/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Suites%20View%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_7",
+            "name": "Holiday Hotel Mysore",
+            "star_rating": 4.5,
+            "total_rooms": 40,
+            "base_price": 30264,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace7/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Holiday%20Hotel%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_8",
+            "name": "Resort Palace Mysore",
+            "star_rating": 3.0,
+            "total_rooms": 27,
+            "base_price": 1938,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace8/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Resort%20Palace%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_9",
+            "name": "Inn Inn Mysore",
+            "star_rating": 3.5,
+            "total_rooms": 167,
+            "base_price": 1941,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace9/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Inn%20Inn%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_10",
+            "name": "Luxury Inn Mysore",
+            "star_rating": 5.0,
+            "total_rooms": 21,
+            "base_price": 30918,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace10/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Luxury%20Inn%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_11",
+            "name": "Oyo Inn Mysore",
+            "star_rating": 5.0,
+            "total_rooms": 91,
+            "base_price": 16835,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace11/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Oyo%20Inn%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_12",
+            "name": "Luxury Lodge Mysore",
+            "star_rating": 5.0,
+            "total_rooms": 177,
+            "base_price": 25616,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace12/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Luxury%20Lodge%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_13",
+            "name": "Radisson Bhavan Mysore",
+            "star_rating": 3.5,
+            "total_rooms": 129,
+            "base_price": 984,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace13/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Radisson%20Bhavan%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_14",
+            "name": "ITC View Mysore",
+            "star_rating": 5.0,
+            "total_rooms": 46,
+            "base_price": 14541,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace14/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=ITC%20View%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_15",
+            "name": "Heritage Palace Mysore",
+            "star_rating": 3.0,
+            "total_rooms": 142,
+            "base_price": 3662,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace15/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Heritage%20Palace%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_16",
+            "name": "Boutique Suites Mysore",
+            "star_rating": 3.5,
+            "total_rooms": 205,
+            "base_price": 1730,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace16/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Boutique%20Suites%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_17",
+            "name": "Radisson Resort Mysore",
+            "star_rating": 3.5,
+            "total_rooms": 91,
+            "base_price": 2509,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace17/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Radisson%20Resort%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_18",
+            "name": "Royal Lodge Mysore",
+            "star_rating": 3.5,
+            "total_rooms": 174,
+            "base_price": 2481,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace18/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Royal%20Lodge%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_19",
+            "name": "Comfort Bhavan Mysore",
+            "star_rating": 5.0,
+            "total_rooms": 123,
+            "base_price": 14756,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace19/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Comfort%20Bhavan%20Mysore"
+        },
+        {
+            "hotel_id": "h_mys_20",
+            "name": "Comfort Suites Mysore",
+            "star_rating": 4.0,
+            "total_rooms": 170,
+            "base_price": 5811,
+            "image_url": "https://picsum.photos/seed/hotelmysore_palace20/300/200",
+            "mmt_link": "https://www.makemytrip.com/hotels/hotel-listing/?city=CTCMYS&searchText=Comfort%20Suites%20Mysore"
+        }
+    ]
+}

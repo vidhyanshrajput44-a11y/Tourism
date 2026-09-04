@@ -441,22 +441,22 @@ function renderHotels(hotels, gridEl) {
     let catColor = h.demand_category === "Low" ? "#15803d" : (h.demand_category === "Medium" ? "#b45309" : "#b91c1c");
     let catBg = h.demand_category === "Low" ? "#dcfce7" : (h.demand_category === "Medium" ? "#fef3c7" : "#fee2e2");
     
-    // Hash the hotel_id to deterministically pick a nice hotel image from Unsplash
-    const HOTEL_IMAGES = [
-      "1566073771259-6a8506099945", "1522798514-97ceb8c4f1c8", 
-      "1455587734955-081b22074882", "1590490360182-c33d57733427"
-    ];
-    let hash = 0;
-    for (let i = 0; i < h.hotel_id.length; i++) hash = h.hotel_id.charCodeAt(i) + ((hash << 5) - hash);
-    const imgId = HOTEL_IMAGES[Math.abs(hash) % HOTEL_IMAGES.length];
-    const photoUrl = `https://images.unsplash.com/photo-${imgId}?auto=format&fit=crop&w=400&h=200&q=80`;
+    // Use image from backend or fallback to Picsum
+    const photoUrl = h.image_url || `https://picsum.photos/seed/${h.hotel_id}/400/200`;
+
+    // MakeMyTrip link
+    const mmtLink = h.mmt_link || `https://www.makemytrip.com/hotels/`;
 
     // Use selectedDest.name as the location if available
     const locationName = selectedDest ? selectedDest.name : "Local";
 
     return `
-      <div style="background: white; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="height: 160px; background: #e2e8f0 url('${photoUrl}') center/cover;"></div>
+      <a href="${mmtLink}" target="_blank" style="text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; background: white; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 10px 15px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+        <div style="height: 160px; background: #e2e8f0 url('${photoUrl}') center/cover; position: relative;">
+          <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.7); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85rem;">
+            ₹${h.base_price.toLocaleString('en-IN')} / night
+          </div>
+        </div>
         <div style="padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;">
           <div style="display: flex; justify-content: space-between; align-items: start;">
             <h4 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.25rem;">${h.name}</h4>
@@ -469,15 +469,16 @@ function renderHotels(hotels, gridEl) {
           </div>
           
           <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; margin-top: auto;">
-            <div style="font-size: 0.85rem; color: var(--text-secondary);">Today's Occupancy</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary);">Predicted Occupancy</div>
             <div style="font-size: 1.1rem; font-weight: 600; color: ${catColor};">${h.current_occupancy}%</div>
           </div>
           
-          <div style="font-size: 0.85rem; color: var(--brand); font-weight: 500;">
-            💡 ${h.pricing_suggestion}
+          <div style="background: #eef2ff; color: #4338ca; border-radius: 6px; padding: 0.5rem; text-align: center; font-weight: 600; font-size: 0.9rem; margin-top: auto; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+            Book on MakeMyTrip
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </div>
         </div>
-      </div>
+      </a>
     `;
   }).join("");
 }

@@ -203,7 +203,7 @@ const DEST_IMAGES = {
 
 function destImageUrl(destId, width, height) {
   const meta = DEST_IMAGES[destId];
-  if (!meta) return "";
+  if (!meta) return `https://picsum.photos/seed/${destId}/${width}/${height}`;
   // Unique sig per destination prevents browser/CDN serving a stale cached image
   return `https://images.unsplash.com/${meta.photo}?auto=format&fit=crop&w=${width}&h=${height}&q=80&ixlib=rb-4.0.3&sig=${encodeURIComponent(destId)}`;
 }

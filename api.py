@@ -190,6 +190,11 @@ from auth_api import auth_router
 app.include_router(auth_router)
 # ---------------------------------------------------------------------------
 
+# --- UI 9: Photo-Based Heritage Rewards ---
+from heritage_rewards_api import rewards_router
+app.include_router(rewards_router)
+# ---------------------------------------------------------------------------
+
 # Serve frontend (must be after API routes)
 if FRONTEND_DIR.exists():
     app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
