@@ -14,6 +14,8 @@ class LocalBusiness:
     rating: float
     price_range: str # ₹, ₹₹, ₹₹₹
     contact_info: str
+    opening_time: str
+    closing_time: str
 
 DESTINATIONS = [
     "taj_mahal", "jaipur_city_palace", "goa_baga_beach", "kerala_backwaters",
@@ -52,7 +54,9 @@ def generate_businesses() -> List[LocalBusiness]:
                 longitude=rng.uniform(70.0, 90.0),
                 rating=round(rng.uniform(3.8, 5.0), 1),
                 price_range=rng.choice(["₹", "₹₹", "₹₹₹"]),
-                contact_info=f"+91-999000{rng.randint(1000, 9999)}"
+                contact_info=f"+91-999000{rng.randint(1000, 9999)}",
+                opening_time="09:00 AM",
+                closing_time="08:00 PM"
             ))
     return businesses
 

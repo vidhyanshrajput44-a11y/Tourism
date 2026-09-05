@@ -7,7 +7,7 @@ def run_tests():
     
     print("[1] Syncing Knowledge Base...")
     try:
-        r = httpx.post(f"{base_url}/chat/refresh-knowledge-base")
+        r = httpx.post(f"{base_url}/chat/refresh-knowledge-base", timeout=30.0)
         print(f"  Response: {r.json()}")
         time.sleep(2) # Give it a moment to build the KB in the background
     except Exception as e:
@@ -30,6 +30,7 @@ def run_tests():
     for q in questions[:3]:
         print(f"\nQ: {q}")
         try:
+            t0 = time.time()
             r = httpx.post(
                 f"{base_url}/chat/message",
                 json={
@@ -37,11 +38,13 @@ def run_tests():
                     "conversation_id": "test_123",
                     "conversation_history": []
                 },
-                timeout=15.0
+                timeout=30.0
             )
+            t1 = time.time()
             res = r.json()
             print(f"A: {res.get('answer')}")
             print(f"Sources Used: {res.get('sources_used')}")
+            print(f"[PROFILER] Request took: {t1-t0:.3f}s")
         except Exception as e:
             print(f"  Error: {e}")
 

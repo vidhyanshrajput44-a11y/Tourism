@@ -65,14 +65,38 @@
 
         <!-- Section 1: Photograph -->
         <div id="secUpload">
-            <h2 style="margin-bottom: 1rem;">Select Destination</h2>
-            <select id="destSelect" style="padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border); width: 100%; max-width: 400px; margin-bottom: 2rem; font-size: 1rem;">
-                <option value="">Choose a destination...</option>
-                <!-- Filled via JS -->
-            </select>
-            
-            <div id="monumentGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
-                <div style="color: var(--text-muted);">Select a destination to view monuments.</div>
+            <!-- Global Progress Bar -->
+            <div id="globalProgress" style="background: white; border-radius: 12px; border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <h3 style="margin-bottom: 0.25rem;">Heritage Photography Journey</h3>
+                    <div style="color: var(--text-secondary); font-size: 0.95rem;">Loading progress...</div>
+                </div>
+            </div>
+
+            <!-- Destination Overview Grid -->
+            <div id="destOverviewGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div class="loading-state">Loading destinations...</div>
+            </div>
+
+            <!-- Destination Detail View (Hidden by default) -->
+            <div id="destDetailView" style="display: none;">
+                <button id="btnBackOverview" style="background: none; border: none; font-weight: 500; cursor: pointer; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; padding: 0;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    Back to All Destinations
+                </button>
+                
+                <div id="destHero" style="height: 200px; border-radius: 12px; background: #e2e8f0; position: relative; overflow: hidden; margin-bottom: 2rem; display: flex; align-items: flex-end; padding: 2rem;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1;"></div>
+                    <img id="destHeroImg" src="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;" onerror="this.src='https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80'" />
+                    <div style="position: relative; z-index: 2; color: white;">
+                        <h2 id="destHeroName" style="font-size: 2rem; margin-bottom: 0.25rem;">Destination Name</h2>
+                        <div id="destHeroCity" style="opacity: 0.9;">City, State</div>
+                    </div>
+                </div>
+                
+                <div id="monumentGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div class="loading-state">Loading monuments...</div>
+                </div>
             </div>
         </div>
 

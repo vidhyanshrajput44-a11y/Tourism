@@ -460,8 +460,9 @@ function renderBusinesses(businesses, gridEl) {
   }
 
   gridEl.innerHTML = businesses.map(b => {
+    const dataStr = encodeURIComponent(JSON.stringify(b));
     return `
-      <div style="background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1rem;">
+      <div style="background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;" onclick="showBizDetails(this)" data-biz="${dataStr}" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
         <div style="display: flex; justify-content: space-between; align-items: start;">
           <h4 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.25rem;">${b.name}</h4>
           <span style="background: #fef3c7; color: #b45309; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.8rem; font-weight: bold;">★ ${b.rating}</span>
@@ -473,6 +474,29 @@ function renderBusinesses(businesses, gridEl) {
     `;
   }).join("");
 }
+
+window.showBizDetails = function(el) {
+  try {
+    const b = JSON.parse(decodeURIComponent(el.getAttribute("data-biz")));
+    document.getElementById("modalBizName").textContent = b.name;
+    document.getElementById("modalBizRating").textContent = "★ " + b.rating;
+    document.getElementById("modalBizCategory").textContent = b.category;
+    document.getElementById("modalBizDesc").textContent = b.description;
+    
+    // Check if the fields exist (they will with our updated Python code)
+    document.getElementById("modalBizOpen").textContent = b.opening_time || "09:00 AM";
+    document.getElementById("modalBizClose").textContent = b.closing_time || "08:00 PM";
+    
+    document.getElementById("modalBizPrice").textContent = "Price: " + b.price_range;
+    document.getElementById("modalBizContact").href = "tel:" + b.contact_info.replace(/[^0-9+]/g, '');
+    
+    const modal = document.getElementById("bizModal");
+    modal.style.display = "flex";
+  } catch(e) {
+    console.error("Error parsing business data", e);
+  }
+};
+
 
 function clearSelection() {
   selectedDest = null;

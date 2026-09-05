@@ -5,6 +5,13 @@ from rag_engine import get_rag_engine, generate_answer
 
 chat_router = APIRouter(prefix="/chat", tags=["Chatbot"])
 
+@chat_router.on_event("startup")
+def preload_rag():
+    # Force the sentence-transformers model and FAISS index to load at startup
+    # so the first user query doesn't experience a 5+ second initialization delay
+    print("Preloading RAG Engine on server startup...")
+    get_rag_engine()
+
 class MessageInput(BaseModel):
     user_query: str
     conversation_id: str
@@ -16,7 +23,11 @@ def api_chat_message(input_data: MessageInput):
         raise HTTPException(status_code=400, detail="Query cannot be empty")
         
     try:
+        import time
+        t0 = time.time()
         rag = get_rag_engine()
+        t1 = time.time()
+        print(f"[PROFILER] get_rag_engine: {t1-t0:.3f}s")
         result = generate_answer(rag, input_data.user_query, input_data.conversation_history)
         return result
     except Exception as e:
@@ -25,9 +36,10 @@ def api_chat_message(input_data: MessageInput):
 @chat_router.post("/refresh-knowledge-base")
 def api_refresh_kb(background_tasks: BackgroundTasks):
     try:
-        # We can run it in background to avoid blocking
+        import threading
         rag = get_rag_engine()
-        background_tasks.add_task(rag.refresh)
+        # Run explicitly in a separate daemon thread to completely decouple from FastAPI's event loop and thread pool
+        threading.Thread(target=rag.refresh, daemon=True).start()
         return {"status": "success", "message": "Knowledge base refresh triggered in background."}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

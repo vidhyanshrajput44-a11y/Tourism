@@ -52,15 +52,15 @@ function appendMessage(role, text, sources = []) {
     avatarDiv.style.color = "#475569";
     avatarDiv.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
   } else {
-    avatarDiv.style.background = "var(--brand)";
+    avatarDiv.style.background = "#2C2419";
     avatarDiv.style.color = "white";
     avatarDiv.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>`;
   }
 
   // Message Box
   const msgBox = document.createElement("div");
-  msgBox.style.background = isUser ? "var(--brand)" : "white";
-  msgBox.style.color = isUser ? "white" : "var(--text-main)";
+  msgBox.style.background = isUser ? "#f8f9fa" : "white";
+  msgBox.style.color = isUser ? "#0f172a" : "var(--text-primary, #0f172a)";
   msgBox.style.border = isUser ? "none" : "1px solid var(--border)";
   msgBox.style.padding = "1rem 1.25rem";
   msgBox.style.borderRadius = isUser ? "12px 12px 0 12px" : "0 12px 12px 12px";

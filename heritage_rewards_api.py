@@ -27,6 +27,49 @@ def get_monuments_for_dest(destination_id: str):
     monuments = MONUMENTS_DB.get(destination_id, [])
     return monuments
 
+@rewards_router.get("/progress-overview/{user_id}")
+def api_progress_overview(user_id: str):
+    from heritage_rewards_data import MONUMENTS_DB, user_photo_submissions
+    
+    # Get all verified submissions for the user
+    verified_monument_ids = {
+        sub["monument_id"] for sub in user_photo_submissions 
+        if sub["user_id"] == user_id and sub["status"] == "verified"
+    }
+
+    overview = []
+    total_monuments = 0
+    total_captured = 0
+    
+    for dest_id, monuments in MONUMENTS_DB.items():
+        dest_total = len(monuments)
+        dest_points = sum(m["points_value"] for m in monuments)
+        
+        captured_in_dest = 0
+        for m in monuments:
+            if m["monument_id"] in verified_monument_ids:
+                captured_in_dest += 1
+                
+        overview.append({
+            "destination_id": dest_id,
+            "total_monuments": dest_total,
+            "captured_monuments": captured_in_dest,
+            "total_points_possible": dest_points
+        })
+        
+        total_monuments += dest_total
+        total_captured += captured_in_dest
+
+    return {
+        "global_progress": {
+            "total_monuments": total_monuments,
+            "captured_monuments": total_captured
+        },
+        "destinations": overview,
+        # Send back the captured list so frontend knows which ones are checked
+        "captured_monument_ids": list(verified_monument_ids)
+    }
+
 @rewards_router.post("/submit-photo")
 async def api_submit_photo(
     user_id: str = Form(...),

@@ -21,14 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     bindTabs();
     await loadDestinations();
     
-    document.getElementById("destSelect").addEventListener("change", (e) => {
-        currentDestId = e.target.value;
-        if(currentDestId) {
-            loadMonuments(currentDestId);
-        } else {
-            document.getElementById("monumentGrid").innerHTML = '<div style="color: var(--text-muted);">Select a destination to view monuments.</div>';
-        }
-    });
+
     
     document.getElementById("btnMock").addEventListener("click", doMockBooking);
 });
@@ -76,19 +69,87 @@ function bindTabs() {
 async function loadDestinations() {
     try {
         const dests = await apiGet("/destinations");
-        const sel = document.getElementById("destSelect");
+        const progress = await apiGet(`/rewards/progress-overview/${currentUserId}`);
+        
+        // Update global progress
+        const pGlobal = progress.global_progress;
+        document.querySelector("#globalProgress div:nth-child(2)").innerHTML = 
+            `<b>${pGlobal.captured_monuments}/${pGlobal.total_monuments}</b> heritage sites captured across India`;
+            
+        const grid = document.getElementById("destOverviewGrid");
+        grid.innerHTML = "";
+        
         dests.forEach(d => {
-            const opt = document.createElement("option");
-            opt.value = d.destination_id;
-            opt.textContent = `${d.name} (${d.city})`;
-            sel.appendChild(opt);
+            const destProgress = progress.destinations.find(x => x.destination_id === d.destination_id);
+            if (!destProgress) return;
+            
+            const card = document.createElement("div");
+            card.style.background = "white";
+            card.style.borderRadius = "12px";
+            card.style.border = "1px solid var(--border)";
+            card.style.overflow = "hidden";
+            card.style.cursor = "pointer";
+            card.style.transition = "transform 0.2s, box-shadow 0.2s";
+            card.onmouseover = () => { card.style.transform = "translateY(-4px)"; card.style.boxShadow = "var(--shadow-md)"; };
+            card.onmouseout = () => { card.style.transform = "none"; card.style.boxShadow = "none"; };
+            card.onclick = () => showDestinationDetail(d, destProgress, progress.captured_monument_ids);
+            
+            card.innerHTML = `
+                <div style="height: 140px; background: #e2e8f0; position: relative;">
+                    <img src="${getFallbackImage(d.category)}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80'" />
+                </div>
+                <div style="padding: 1.25rem;">
+                    <h3 style="font-size: 1.1rem; margin: 0 0 0.5rem 0;">${d.name}</h3>
+                    <div style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">${d.city}, ${d.state}</div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                        <span style="color: var(--text-muted);">${destProgress.total_monuments} monuments</span>
+                        <span style="font-weight: 600; color: ${destProgress.captured_monuments === destProgress.total_monuments ? '#10b981' : 'var(--accent-dark)'};">
+                            ${destProgress.captured_monuments}/${destProgress.total_monuments} captured
+                        </span>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
         });
+        
     } catch(err) {
         console.error(err);
+        document.getElementById("destOverviewGrid").innerHTML = '<div style="color: red;">Failed to load destinations.</div>';
     }
 }
 
-async function loadMonuments(destId) {
+function getFallbackImage(category) {
+    const map = {
+        "heritage": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80",
+        "beach": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80",
+        "religious": "https://images.unsplash.com/photo-1561359313-0639aad073f0?auto=format&fit=crop&w=800&q=80",
+        "hill-station": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80"
+    };
+    return map[category] || map["heritage"];
+}
+
+function showDestinationDetail(dest, destProgress, capturedIds) {
+    currentDestId = dest.destination_id;
+    document.getElementById("destOverviewGrid").style.display = "none";
+    document.getElementById("globalProgress").style.display = "none";
+    document.getElementById("destDetailView").style.display = "block";
+    
+    document.getElementById("destHeroName").textContent = dest.name;
+    document.getElementById("destHeroCity").textContent = `${dest.city}, ${dest.state}`;
+    document.getElementById("destHeroImg").src = getFallbackImage(dest.category);
+    
+    document.getElementById("btnBackOverview").onclick = () => {
+        document.getElementById("destDetailView").style.display = "none";
+        document.getElementById("destOverviewGrid").style.display = "grid";
+        document.getElementById("globalProgress").style.display = "flex";
+        loadDestinations(); // Refresh progress
+    };
+    
+    loadMonuments(currentDestId, capturedIds);
+}
+
+async function loadMonuments(destId, capturedIds) {
     const grid = document.getElementById("monumentGrid");
     grid.innerHTML = '<div class="loading-state">Loading monuments...</div>';
     try {
@@ -98,26 +159,51 @@ async function loadMonuments(destId) {
             return;
         }
         
-        grid.innerHTML = monuments.map(m => `
-            <div style="background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                    <h3 style="font-size: 1.1rem; color: var(--text-primary);">${m.name}</h3>
-                    <span style="background: #fef3c7; color: #b45309; padding: 0.2rem 0.6rem; border-radius: 999px; font-weight: bold; font-size: 0.8rem;">${m.points_value} pts</span>
-                </div>
-                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1;">${m.description}</p>
-                
-                
-                <input type="file" id="file_${m.monument_id}" accept="image/*" capture="environment" style="display: none;" onchange="handleUpload('${m.monument_id}')">
-                
-                <img id="preview_${m.monument_id}" src="" style="display:none; width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--border);" />
-                
-                <button onclick="openCamera('${m.monument_id}', '${m.name.replace("'", "\'")}')" style="width: 100%; padding: 0.75rem; background: var(--accent-dark); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
-
+        grid.innerHTML = monuments.map(m => {
+            const isCaptured = capturedIds.includes(m.monument_id);
+            
+            let badgeHtml = "";
+            let btnHtml = "";
+            let overlayHtml = "";
+            
+            if (isCaptured) {
+                overlayHtml = `<div style="position: absolute; inset: 0; background: rgba(255,255,255,0.7); z-index: 10; pointer-events: none;"></div>`;
+                badgeHtml = `<div style="position: absolute; top: 1rem; right: 1rem; background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; z-index: 11; display: flex; align-items: center; gap: 0.25rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Captured
+                </div>`;
+                btnHtml = `<button disabled style="width: 100%; padding: 0.75rem; background: #e2e8f0; color: var(--text-muted); border: none; border-radius: 8px; font-weight: 600; cursor: not-allowed; display: flex; justify-content: center; align-items: center; gap: 0.5rem; z-index: 11; position: relative;">
+                    Already Photographed
+                </button>`;
+            } else {
+                badgeHtml = `<div style="position: absolute; top: 1rem; right: 1rem; background: #fef3c7; color: #b45309; padding: 0.2rem 0.6rem; border-radius: 999px; font-weight: bold; font-size: 0.8rem; z-index: 11;">
+                    ${m.points_value} pts
+                </div>`;
+                btnHtml = `<button onclick="openCamera('${m.monument_id}', '${m.name.replace("'", "\\'")}')" style="width: 100%; padding: 0.75rem; background: var(--accent-dark); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 0.5rem; z-index: 11; position: relative;">
                     📸 Take Photo
-                </button>
-                <div id="res_${m.monument_id}" style="margin-top: 1rem; display: none; font-size: 0.9rem; padding: 0.75rem; border-radius: 6px;"></div>
+                </button>`;
+            }
+            
+            return `
+            <div style="background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; position: relative; display: flex; flex-direction: column;">
+                ${overlayHtml}
+                ${badgeHtml}
+                <div style="height: 160px; background: #f1f5f9; display: flex; align-items: center; justify-content: center;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                </div>
+                <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
+                    <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">${m.name}</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1;">${m.description}</p>
+                    
+                    <input type="file" id="file_${m.monument_id}" accept="image/*" capture="environment" style="display: none;" onchange="handleUpload('${m.monument_id}')">
+                    <img id="preview_${m.monument_id}" src="" style="display:none; width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--border); position: relative; z-index: 11;" />
+                    
+                    ${btnHtml}
+                    
+                    <div id="res_${m.monument_id}" style="margin-top: 1rem; display: none; font-size: 0.9rem; padding: 0.75rem; border-radius: 6px; position: relative; z-index: 11;"></div>
+                </div>
             </div>
-        `).join("");
+        `}).join("");
     } catch(err) {
         grid.innerHTML = `<div style="color: red;">Error: ${err.message}</div>`;
     }
