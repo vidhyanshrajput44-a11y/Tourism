@@ -28,6 +28,10 @@ predictor = FootprintPredictor()
 async def lifespan(app: FastAPI):
     """Load model once at startup — not on every request."""
     predictor.load()
+    try:
+        list_destinations()
+    except Exception:
+        pass
     yield
 
 
@@ -128,10 +132,21 @@ def predict(req: PredictRequest):
         raise HTTPException(status_code=500, detail=f"Prediction failed: {e}")
 
 
+_destinations_cache = None
+_destinations_cache_date = None
+_forecast_cache = {}
+
+
 @app.get("/forecast/{destination_id}", response_model=list[ForecastDay])
 def forecast(destination_id: str):
+    today = date.today().isoformat()
+    cache_key = (destination_id, today)
+    if cache_key in _forecast_cache:
+        return _forecast_cache[cache_key]
     try:
-        return predictor.forecast_7_days(destination_id)
+        data = predictor.forecast_7_days(destination_id)
+        _forecast_cache[cache_key] = data
+        return data
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
     except Exception as e:
@@ -140,8 +155,12 @@ def forecast(destination_id: str):
 
 @app.get("/destinations", response_model=list[DestinationInfo])
 def list_destinations():
-    results = []
+    global _destinations_cache, _destinations_cache_date
     today = date.today().isoformat()
+    if _destinations_cache is not None and _destinations_cache_date == today:
+        return _destinations_cache
+
+    results = []
     for dest_id, meta in predictor.destinations.items():
         try:
             pred = predictor.predict_single(dest_id, today)
@@ -159,6 +178,8 @@ def list_destinations():
             current_crowd_category=category,
             current_crowd_score=score,
         ))
+    _destinations_cache = results
+    _destinations_cache_date = today
     return results
 
 # --- UI 2: AI Crowd Redistribution Engine (Added without breaking UI 1) ---
