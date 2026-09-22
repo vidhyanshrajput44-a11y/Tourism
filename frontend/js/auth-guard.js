@@ -9,7 +9,9 @@
   
   // Verify token is still valid with backend
   try {
-    const apiBase = window.location.origin.includes("8000") ? window.location.origin : "http://127.0.0.1:8000";
+    const apiBase = (window.location.protocol === "http:" || window.location.protocol === "https:")
+      ? (window.location.port === "5500" || window.location.port === "3000" ? "http://127.0.0.1:8000" : window.location.origin)
+      : "http://127.0.0.1:8000";
     const res = await fetch(`${apiBase}/auth/me`, {
       headers: {
         "Authorization": `Bearer ${token}`

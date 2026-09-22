@@ -3,8 +3,8 @@
  * All API logic unchanged; UI presentation layer only.
  */
 
-const API_BASE = window.location.origin.includes("8000")
-  ? window.location.origin
+const API_BASE = (window.location.protocol === "http:" || window.location.protocol === "https:")
+  ? (window.location.port === "5500" || window.location.port === "3000" ? "http://127.0.0.1:8000" : window.location.origin)
   : "http://127.0.0.1:8000";
 
 const TOMTOM_API_KEY = "01LQYrezFaLQbsmT3SoD4XVwxUfsmqsk"; // used only for Kempty Falls and Robber's Cave

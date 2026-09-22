@@ -202,15 +202,19 @@ async function init() {
 
 init();
 
+const API_BASE = (window.location.protocol === "http:" || window.location.protocol === "https:")
+  ? (window.location.port === "5500" || window.location.port === "3000" ? "http://127.0.0.1:8000" : window.location.origin)
+  : "http://127.0.0.1:8000";
+
 // --- API Helpers (copied from shared logic) ---
 async function apiGet(endpoint) {
-  const res = await fetch(`http://127.0.0.1:8000${endpoint}`);
+  const res = await fetch(`${API_BASE}${endpoint}`);
   if (!res.ok) throw new Error(`API error: ${res.statusText}`);
   return await res.json();
 }
 
 async function apiPost(endpoint, payload) {
-  const res = await fetch(`http://127.0.0.1:8000${endpoint}`, {
+  const res = await fetch(`${API_BASE}${endpoint}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),

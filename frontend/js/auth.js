@@ -1,5 +1,7 @@
 // auth.js - Handles login on index.html and session logic on ui1.html
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL = (window.location.protocol === "http:" || window.location.protocol === "https:")
+  ? (window.location.port === "5500" || window.location.port === "3000" ? "http://127.0.0.1:8000" : window.location.origin)
+  : "http://127.0.0.1:8000";
 
 // Only run landing page logic if we are on index.html
 if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname.endsWith("frontend/")) {
