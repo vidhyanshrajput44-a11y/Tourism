@@ -3,19 +3,32 @@ import os
 
 # Disable tokenizers parallelism to fix [Errno 32] Broken pipe on MacOS with FastAPI
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
-import faiss
 from knowledge_builder import build_knowledge_base
 
 class RAGEngine:
     def __init__(self, model_name='all-MiniLM-L6-v2'):
-        print("Initializing RAG Engine...")
-        self.encoder = SentenceTransformer(model_name)
+        self.model_name = model_name
+        self._encoder = None
         self.documents = []
         self.index = None
         self.load_knowledge_base()
+
+    @property
+    def encoder(self):
+        if self._encoder is None:
+            print("Loading SentenceTransformer encoder...")
+            try:
+                import torch
+                torch.set_num_threads(1)
+            except Exception:
+                pass
+            from sentence_transformers import SentenceTransformer
+            self._encoder = SentenceTransformer(self.model_name)
+        return self._encoder
 
     def load_knowledge_base(self):
         kb_exists = os.path.exists("knowledge_base.json")
@@ -33,9 +46,11 @@ class RAGEngine:
 
         if index_exists and kb_exists:
             print("Loading FAISS index from disk...")
+            import faiss
             self.index = faiss.read_index("faiss_index.bin")
         else:
             print("Embedding documents for FAISS index...")
+            import faiss
             texts = [doc["text"] for doc in self.documents]
             embeddings = self.encoder.encode(texts, convert_to_numpy=True)
             dimension = embeddings.shape[1]
@@ -47,6 +62,7 @@ class RAGEngine:
     def refresh(self):
         self.documents = build_knowledge_base()
         if self.documents:
+            import faiss
             texts = [doc["text"] for doc in self.documents]
             embeddings = self.encoder.encode(texts, convert_to_numpy=True)
             self.index = faiss.IndexFlatL2(embeddings.shape[1])

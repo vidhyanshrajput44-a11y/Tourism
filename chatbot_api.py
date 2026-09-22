@@ -5,13 +5,6 @@ from rag_engine import get_rag_engine, generate_answer
 
 chat_router = APIRouter(prefix="/chat", tags=["Chatbot"])
 
-@chat_router.on_event("startup")
-def preload_rag():
-    # Force the sentence-transformers model and FAISS index to load at startup
-    # so the first user query doesn't experience a 5+ second initialization delay
-    print("Preloading RAG Engine on server startup...")
-    get_rag_engine()
-
 class MessageInput(BaseModel):
     user_query: str
     conversation_id: str

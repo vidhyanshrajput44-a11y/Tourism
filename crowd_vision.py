@@ -2,10 +2,22 @@ import cv2
 import numpy as np
 import base64
 from pathlib import Path
-from ultralytics import YOLO
+# Lazy load model on demand to conserve memory (keeps startup under 512MB RAM on Render)
+_model = None
 
-# Load model once
-model = YOLO('yolov8n.pt')
+def get_yolo_model():
+    global _model
+    if _model is None:
+        import os
+        os.environ["OMP_NUM_THREADS"] = "1"
+        try:
+            import torch
+            torch.set_num_threads(1)
+        except Exception:
+            pass
+        from ultralytics import YOLO
+        _model = YOLO('yolov8n.pt')
+    return _model
 
 def estimate_crowd_from_image(image_bytes: bytes, destination_id: str):
     """
@@ -21,6 +33,7 @@ def estimate_crowd_from_image(image_bytes: bytes, destination_id: str):
         raise ValueError("Invalid image data")
 
     # Run inference
+    model = get_yolo_model()
     results = model(img)
     
     # Class 0 in COCO is 'person'
