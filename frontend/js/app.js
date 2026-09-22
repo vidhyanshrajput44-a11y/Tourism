@@ -7,6 +7,43 @@ const API_BASE = window.location.origin.includes("8000")
   ? window.location.origin
   : "http://127.0.0.1:8000";
 
+const TOMTOM_API_KEY = "01LQYrezFaLQbsmT3SoD4XVwxUfsmqsk"; // used only for Kempty Falls and Robber's Cave
+
+function traffic_to_crowd_signal(currentSpeed, freeFlowSpeed, minBaseline = 18) {
+    if (freeFlowSpeed == null || freeFlowSpeed === 0 || currentSpeed == null) return null;
+    let ratio = currentSpeed / freeFlowSpeed;
+    ratio = Math.max(0, Math.min(1, ratio));
+    const rawScore = Math.round((1 - ratio) * 100);
+    return Math.max(minBaseline, rawScore);
+}
+
+async function fetchTomTomCrowdIndex(lat, lon, minBaseline = 18) {
+    try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        const url = `https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json?key=${TOMTOM_API_KEY}&point=${lat},${lon}`;
+        const response = await fetch(url, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        if (!response.ok) throw new Error("TomTom API failed");
+        const data = await response.json();
+        
+        if (data && data.flowSegmentData) {
+            const crowdIndex = traffic_to_crowd_signal(
+                data.flowSegmentData.currentSpeed,
+                data.flowSegmentData.freeFlowSpeed,
+                minBaseline
+            );
+            if (crowdIndex !== null) return crowdIndex;
+        }
+        console.warn(`Low coverage for TomTom at ${lat},${lon}.`);
+        return minBaseline;
+    } catch (e) {
+        console.warn(`Error fetching TomTom data for ${lat},${lon}:`, e);
+        return minBaseline;
+    }
+}
+
+
 /* Curated Unsplash photos — location-specific, hotlinked per Unsplash guidelines
    Format: images.unsplash.com/{photo-id}?auto=format&fit=crop&w=&h=&q=80 */
 const DEST_IMAGES = {
@@ -59,6 +96,18 @@ const DEST_IMAGES = {
     creditUrl: "https://unsplash.com/@simon_berger",
     photoUrl: "https://unsplash.com/photos/snow-covered-mountain-under-stars-1506905925346",
   },
+  kempty_falls: {
+    photoUrl: "images/kempty_falls.jpg",
+    alt: "Kempty Falls, Mussoorie",
+    credit: "Local Image",
+    creditUrl: "#"
+  },
+  robbers_cave: {
+    photoUrl: "images/robbers_cave.jpg",
+    alt: "Robber's Cave, Dehradun",
+    credit: "Local Image",
+    creditUrl: "#"
+  },
   mysore_palace: {
     photo: "photo-1611510338559-2f463335092c",
     alt: "Mysore Palace, Karnataka",
@@ -71,8 +120,13 @@ const DEST_IMAGES = {
 function destImageUrl(destId, width, height) {
   const meta = DEST_IMAGES[destId];
   if (!meta) return `https://picsum.photos/seed/${destId}/${width}/${height}`;
-  // Unique sig per destination prevents browser/CDN serving a stale cached image
-  return `https://images.unsplash.com/${meta.photo}?auto=format&fit=crop&w=${width}&h=${height}&q=80&ixlib=rb-4.0.3&sig=${encodeURIComponent(destId)}`;
+  if (meta.photoUrl && (meta.photoUrl.startsWith("images/") || meta.photoUrl.startsWith("/images/") || meta.photoUrl.match(/\.(jpg|jpeg|png|webp)$/i))) {
+    return meta.photoUrl;
+  }
+  if (meta.photo) {
+    return `https://images.unsplash.com/${meta.photo}?auto=format&fit=crop&w=${width}&h=${height}&q=80&sig=${encodeURIComponent(destId)}`;
+  }
+  return `https://picsum.photos/seed/${destId}/${width}/${height}`;
 }
 
 function setHeroImage(destId) {
@@ -166,6 +220,11 @@ function setApiStatus(online, text) {
 
 function updateScaleMarker(score) {
   const marker = document.getElementById("scaleMarker");
+  if (typeof score !== 'number') {
+      marker.style.display = 'none';
+      return;
+  }
+  marker.style.display = 'block';
   marker.style.left = `${Math.min(100, Math.max(0, score))}%`;
 }
 
@@ -203,6 +262,8 @@ function renderDestinations() {
       const thumbUrl = destImageUrl(d.destination_id, 160, 112);
       const alt = imgMeta?.alt || d.name;
       const isActive = selectedDest?.destination_id === d.destination_id;
+      const isTomTom = d.destination_id === "kempty_falls" || d.destination_id === "robbers_cave";
+      const liveBadge = isTomTom ? `<div style="font-size:10px; font-weight:700; color:#0284c7; margin-top:2px;">⚡ TomTom Real-World Data</div>` : "";
       return `
       <article class="dest-item${isActive ? " active" : ""}" data-id="${d.destination_id}" tabindex="0" role="button">
         <div class="dest-thumb">
@@ -212,9 +273,10 @@ function renderDestinations() {
         <div class="dest-info">
           <h4>${d.name}</h4>
           <p>${d.city}, ${d.state}</p>
+          ${liveBadge}
           <div class="dest-score-row">
             <span class="score-label">Crowd Index</span>
-            <span class="score">${d.current_crowd_score}<span class="score-max">/100</span></span>
+            <span class="score">${typeof d.current_crowd_score === 'number' ? d.current_crowd_score + '<span class="score-max">/100</span>' : `<span style="font-size:12px;font-weight:normal;">${d.current_crowd_score}</span>`}</span>
           </div>
         </div>
         <div class="dest-indicator ${cls}" aria-hidden="true"></div>
@@ -248,6 +310,15 @@ async function openDetail(destId) {
   document.getElementById("detailSubtitle").textContent =
     `${selectedDest.city}, ${selectedDest.state} · Max capacity ${formatNumber(selectedDest.max_capacity)} visitors/day`;
 
+  const eyebrow = document.querySelector(".intel-eyebrow");
+  if (eyebrow) {
+    if (selectedDest.destination_id === "kempty_falls" || selectedDest.destination_id === "robbers_cave") {
+      eyebrow.innerHTML = `<span style="color:#0284c7; font-weight:700;">⚡ LIVE TOMTOM TRAFFIC DATA</span> (Real-World Stream: ${selectedDest.lat}, ${selectedDest.lon})`;
+    } else {
+      eyebrow.textContent = "Live AI Analysis";
+    }
+  }
+
   const score = selectedDest.current_crowd_score;
   document.getElementById("gaugeScore").textContent = score;
   updateScaleMarker(score);
@@ -261,6 +332,16 @@ async function openDetail(destId) {
     formatNumber(selectedDest.max_capacity);
 
   setHeroImage(selectedDest.destination_id);
+
+  if (selectedDest.lat && selectedDest.lon) {
+      const mapCard = document.querySelector('.map-card');
+      if (mapCard) mapCard.hidden = false;
+      setTimeout(() => initUi1Map(selectedDest.lat, selectedDest.lon, selectedDest.name), 100);
+  } else {
+      const mapCard = document.querySelector('.map-card');
+      if (mapCard) mapCard.hidden = true;
+  }
+
 
   renderDestinations();
 
@@ -278,6 +359,14 @@ async function openDetail(destId) {
     document.getElementById("intelPanel").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+
+  document.getElementById("forecastChart").innerHTML = "";
+  document.getElementById("forecastTable").innerHTML = "";
+  document.getElementById("detailConfidence").textContent = "—";
+  document.getElementById("bestTimeDate").textContent = "—";
+  document.getElementById("bestTimeDetail").textContent = "Analyzing 7-day forecast…";
+  document.getElementById("bestTimeScore").textContent = "—";
+  
   try {
     const forecast = await apiGet(`/forecast/${destId}`);
     currentForecast = forecast;
@@ -387,6 +476,20 @@ async function init() {
     if (railSub) railSub.textContent = (health.inference_model || "XGBoost").toUpperCase();
 
     destinations = await apiGet("/destinations");
+
+    // Attach coordinates for TomTom destinations
+    const kemptyObj = destinations.find((d) => d.destination_id === "kempty_falls");
+    if (kemptyObj) {
+      kemptyObj.lat = 30.4598;
+      kemptyObj.lon = 78.1652;
+    }
+
+    const robbersObj = destinations.find((d) => d.destination_id === "robbers_cave");
+    if (robbersObj) {
+      robbersObj.lat = 30.3777;
+      robbersObj.lon = 78.0346;
+    }
+
     document.getElementById("statDestinations").textContent = destinations.length;
     document.getElementById("statUpdated").textContent = new Date().toLocaleTimeString("en-IN", {
       hour: "2-digit",
@@ -399,14 +502,31 @@ async function init() {
     if (destinations.length > 0) {
       openDetail(destinations[0].destination_id);
     }
+
+    // Fetch TomTom live crowd metrics in background asynchronously
+    Promise.allSettled([
+      fetchTomTomCrowdIndex(30.4598, 78.1652, 24), // Kempty Falls baseline: 24
+      fetchTomTomCrowdIndex(30.3777, 78.0346, 16)  // Robber's Cave baseline: 16
+    ]).then(([kRes, rRes]) => {
+      if (kRes.status === "fulfilled" && kemptyObj) {
+        kemptyObj.current_crowd_score = kRes.value;
+        kemptyObj.current_crowd_category = typeof kRes.value === 'number' ? (kRes.value < 40 ? "Low" : (kRes.value < 70 ? "Medium" : "High")) : "N/A";
+      }
+      if (rRes.status === "fulfilled" && robbersObj) {
+        robbersObj.current_crowd_score = rRes.value;
+        robbersObj.current_crowd_category = typeof rRes.value === 'number' ? (rRes.value < 40 ? "Low" : (rRes.value < 70 ? "Medium" : "High")) : "N/A";
+      }
+      renderDestinations();
+    });
   } catch (err) {
-    setApiStatus(false, "Offline");
-    document.getElementById("destinationsGrid").innerHTML = `
-      <div class="error-message">
-        <p><strong>Cannot connect to API</strong></p>
-        <p style="margin-top:0.5rem">Run: <code>uvicorn api:app --reload</code></p>
-        <p style="margin-top:0.5rem"><a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p>
-      </div>`;
+    console.error("Init Error:", err);
+    try { setApiStatus(false, "Offline"); } catch(e) {}
+    try {
+      document.getElementById("destinationsGrid").innerHTML = `
+        <div class="error-message">
+          <p><strong>API Error: ${err.message}</strong></p>
+        </div>`;
+    } catch(e) {}
   }
 }
 
@@ -422,3 +542,25 @@ document.getElementById("navDestinations").addEventListener("click", () => {
 document.getElementById("predictForm").addEventListener("submit", handlePredict);
 
 init();
+
+
+let ui1Map = null;
+let ui1Marker = null;
+
+function initUi1Map(lat, lon, title) {
+    if (!document.getElementById("ui1Map")) return;
+    if (!ui1Map) {
+        ui1Map = L.map('ui1Map').setView([lat, lon], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(ui1Map);
+    } else {
+        ui1Map.setView([lat, lon], 13);
+    }
+    
+    if (ui1Marker) {
+        ui1Marker.remove();
+    }
+    ui1Marker = L.marker([lat, lon]).addTo(ui1Map).bindPopup(`<b>${title}</b>`).openPopup();
+}

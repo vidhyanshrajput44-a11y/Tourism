@@ -98,24 +98,6 @@ DESTINATIONS = [
         "max_capacity": 24000,
         "peak_months": [10, 11, 12, 1, 2, 3],
     },
-    {
-        "destination_id": "kempty_falls",
-        "name": "Kempty Falls",
-        "city": "Mussoorie",
-        "state": "Uttarakhand",
-        "base_footfall": 5000,
-        "max_capacity": 10000,
-        "peak_months": [5, 6, 12, 1],
-    },
-    {
-        "destination_id": "robbers_cave",
-        "name": "Robber's Cave",
-        "city": "Dehradun",
-        "state": "Uttarakhand",
-        "base_footfall": 3000,
-        "max_capacity": 5000,
-        "peak_months": [5, 6, 10, 11],
-    },
 ]
 
 # ---------------------------------------------------------------------------
@@ -309,28 +291,6 @@ def generate_dataset(
         current += timedelta(days=1)
 
     return pd.DataFrame(rows)
-
-
-def fetch_real_grounded_data_with_fallback(
-    start_date: date = date(2024, 1, 1),
-    end_date: date | None = None,
-    seed: int = 42,
-) -> pd.DataFrame:
-    """
-    Attempt to fetch/process real ASI + weather data.
-    If processing or network call fails for ANY reason, catch the exception,
-    log a clear warning, and safely fall back to synthetic dataset generation.
-    """
-    import logging
-    logger = logging.getLogger(__name__)
-    try:
-        # Hook for external ASI / Open-Meteo API stream
-        raise NotImplementedError("Real ASI external stream pending live key")
-    except Exception as e:
-        logger.warning(
-            "Real ASI/weather data fetch failed (%s). Falling back to synthetic baseline generator.", e
-        )
-        return generate_dataset(start_date=start_date, end_date=end_date, seed=seed)
 
 
 def save_dataset(df: pd.DataFrame) -> None:

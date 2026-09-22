@@ -62,5 +62,21 @@
     "state": "Karnataka",
     "max_capacity": 24000,
     "base_footfall": 11000
+  },
+  {
+    "destination_id": "kempty_falls",
+    "name": "Kempty Falls",
+    "city": "Mussoorie",
+    "state": "Uttarakhand",
+    "max_capacity": 10000,
+    "base_footfall": 5000
+  },
+  {
+    "destination_id": "robbers_cave",
+    "name": "Robber's Cave",
+    "city": "Dehradun",
+    "state": "Uttarakhand",
+    "max_capacity": 5000,
+    "base_footfall": 3000
   }
 ]

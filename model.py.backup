@@ -55,59 +55,27 @@ class FootprintPredictor:
         self.metrics: dict = {}
 
     def load(self) -> None:
-        """Load model artifacts from disk (called once at API startup) with safe fallback."""
-        import logging
-        logger = logging.getLogger(__name__)
+        """Load model artifacts from disk (called once at API startup)."""
         MODELS_DIR.mkdir(parents=True, exist_ok=True)
 
-        try:
-            with open(DESTINATIONS_JSON) as f:
-                dest_list = json.load(f)
-            self.destinations = {d["destination_id"]: d for d in dest_list}
-        except Exception as e:
-            logger.warning("Failed to load destinations.json (%s), regenerating...", e)
-            from data_generator import generate_dataset, save_dataset
-            save_dataset(generate_dataset())
-            with open(DESTINATIONS_JSON) as f:
-                dest_list = json.load(f)
-            self.destinations = {d["destination_id"]: d for d in dest_list}
+        with open(DESTINATIONS_JSON) as f:
+            dest_list = json.load(f)
+        self.destinations = {d["destination_id"]: d for d in dest_list}
 
-        try:
-            self.history = pd.read_csv(DATA_CSV, parse_dates=["date"])
-        except Exception as e:
-            logger.warning("Failed to load footfall history (%s), regenerating...", e)
-            from data_generator import generate_dataset, save_dataset
-            df = generate_dataset()
-            save_dataset(df)
-            self.history = df
+        self.history = pd.read_csv(DATA_CSV, parse_dates=["date"])
 
-        try:
-            with open(BEST_MODEL_JSON) as f:
-                meta = json.load(f)
-            self.best_model_name = meta.get("best_model", "xgboost")
+        with open(BEST_MODEL_JSON) as f:
+            meta = json.load(f)
+        self.best_model_name = meta.get("best_model", "xgboost")
 
-            bundle = joblib.load(XGBOOST_MODEL_PATH)
-            self.model = bundle["model"]
-            self.weather_encoder = bundle["weather_encoder"]
-            self.dest_encoder = bundle["dest_encoder"]
-        except Exception as e:
-            logger.warning("Primary model load failed (%s). Attempting retrain fallback...", e)
-            try:
-                from model import train_all
-                train_all()
-                bundle = joblib.load(XGBOOST_MODEL_PATH)
-                self.model = bundle["model"]
-                self.weather_encoder = bundle["weather_encoder"]
-                self.dest_encoder = bundle["dest_encoder"]
-            except Exception as train_err:
-                logger.error("Fallback retraining also failed (%s).", train_err)
+        bundle = joblib.load(XGBOOST_MODEL_PATH)
+        self.model = bundle["model"]
+        self.weather_encoder = bundle["weather_encoder"]
+        self.dest_encoder = bundle["dest_encoder"]
 
         if METRICS_JSON.exists():
-            try:
-                with open(METRICS_JSON) as f:
-                    self.metrics = json.load(f)
-            except Exception:
-                pass
+            with open(METRICS_JSON) as f:
+                self.metrics = json.load(f)
 
     def _get_capacity(self, destination_id: str) -> int:
         return self.destinations[destination_id]["max_capacity"]
