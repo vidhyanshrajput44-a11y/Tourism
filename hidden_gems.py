@@ -3,13 +3,26 @@ from typing import List, Dict, Any
 from hidden_gems_data import QUALITY_RATINGS
 
 def get_hidden_gems(exclude_top: int = 3) -> List[Dict[str, Any]]:
-    # Call UI 1 to get footfall/crowd data
+    ui1_dests = []
     try:
-        resp = httpx.get("http://127.0.0.1:8000/destinations", timeout=5.0)
-        ui1_dests = resp.json()
-    except Exception as e:
-        print(f"Error calling UI 1 destinations: {e}")
-        ui1_dests = []
+        from model import FootprintPredictor
+        from datetime import date
+        predictor = FootprintPredictor()
+        predictor.load()
+        today = date.today().isoformat()
+        for dest_id in predictor.destinations:
+            pred = predictor.predict_single(dest_id, today)
+            ui1_dests.append({
+                "destination_id": dest_id,
+                "current_crowd_score": pred["crowd_score"]
+            })
+    except Exception:
+        try:
+            resp = httpx.get("http://127.0.0.1:8000/destinations", timeout=5.0)
+            ui1_dests = resp.json()
+        except Exception as e:
+            print(f"Error calling UI 1 destinations: {e}")
+            ui1_dests = []
 
     crowd_map = {d["destination_id"]: d["current_crowd_score"] for d in ui1_dests}
 

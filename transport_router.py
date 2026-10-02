@@ -7,18 +7,30 @@ def suggest_route(destination_id: str):
     if not hubs:
         return {"error": "No transit hubs found for this destination"}
         
+    dest_crowd = None
     try:
-        resp = httpx.get("http://127.0.0.1:8000/destinations", timeout=5.0)
-        resp.raise_for_status()
-        dests = resp.json()
-    except Exception as e:
-        return {"error": str(e)}
-        
-    d_meta = next((d for d in dests if d["destination_id"] == destination_id), None)
-    if not d_meta:
-        return {"error": "Destination not found"}
-        
-    dest_crowd = d_meta["current_crowd_score"]
+        from model import FootprintPredictor
+        from datetime import date
+        p = FootprintPredictor()
+        p.load()
+        if destination_id in p.destinations:
+            today = date.today().isoformat()
+            pred = p.predict_single(destination_id, today)
+            dest_crowd = pred["crowd_score"]
+    except Exception:
+        pass
+
+    if dest_crowd is None:
+        try:
+            resp = httpx.get("http://127.0.0.1:8000/destinations", timeout=5.0)
+            resp.raise_for_status()
+            dests = resp.json()
+            d_meta = next((d for d in dests if d["destination_id"] == destination_id), None)
+            if not d_meta:
+                return {"error": "Destination not found"}
+            dest_crowd = d_meta["current_crowd_score"]
+        except Exception as e:
+            return {"error": str(e)}
     
     # Simple heuristic: Transit hubs share the destination's congestion, 
     # but the primary hub (usually index 0) gets the brunt of it.

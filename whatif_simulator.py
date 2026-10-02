@@ -4,28 +4,54 @@ from gov_dashboard_data import add_policy_log
 
 def simulate_capacity_cap(destination_id: str, proposed_cap: int):
     # Fetch live forecast
+    forecast = None
     try:
-        resp = httpx.get(f"http://127.0.0.1:8000/forecast/{destination_id}", timeout=5.0)
-        resp.raise_for_status()
-        forecast = resp.json()
-    except Exception as e:
-        print(f"Error fetching forecast for simulation: {e}")
-        return {"error": "Could not fetch current forecast"}
+        from model import FootprintPredictor
+        p = FootprintPredictor()
+        p.load()
+        if destination_id in p.destinations:
+            forecast = p.forecast_7_days(destination_id)
+    except Exception:
+        pass
+
+    if not forecast:
+        try:
+            resp = httpx.get(f"http://127.0.0.1:8000/forecast/{destination_id}", timeout=5.0)
+            resp.raise_for_status()
+            forecast = resp.json()
+        except Exception as e:
+            print(f"Error fetching forecast for simulation: {e}")
+            return {"error": "Could not fetch current forecast"}
 
     # Use today's predicted score (first item)
     today = forecast[0]
     crowd_score = today["crowd_score"]
     
     # We need to know original max capacity. Fetch destinations.
+    original_cap = None
+    d_name = destination_id.replace("_", " ").title()
     try:
-        dest_resp = httpx.get("http://127.0.0.1:8000/destinations", timeout=5.0)
-        dests = dest_resp.json()
-        d_meta = next((d for d in dests if d["destination_id"] == destination_id), None)
-        if not d_meta:
-            return {"error": "Destination not found"}
-        original_cap = d_meta["max_capacity"]
-    except Exception as e:
-        return {"error": str(e)}
+        from model import FootprintPredictor
+        p = FootprintPredictor()
+        p.load()
+        if destination_id in p.destinations:
+            d_meta = p.destinations[destination_id]
+            original_cap = d_meta["max_capacity"]
+            d_name = d_meta["name"]
+    except Exception:
+        pass
+
+    if original_cap is None:
+        try:
+            dest_resp = httpx.get("http://127.0.0.1:8000/destinations", timeout=5.0)
+            dests = dest_resp.json()
+            d_meta = next((d for d in dests if d["destination_id"] == destination_id), None)
+            if not d_meta:
+                return {"error": "Destination not found"}
+            original_cap = d_meta["max_capacity"]
+            d_name = d_meta["name"]
+        except Exception as e:
+            return {"error": str(e)}
 
     # Estimate raw headcount from the score
     predicted_visitors = int((crowd_score / 100.0) * original_cap)
@@ -43,7 +69,7 @@ def simulate_capacity_cap(destination_id: str, proposed_cap: int):
     
     result = {
         "destination_id": destination_id,
-        "name": d_meta["name"],
+        "name": d_name,
         "proposed_cap": proposed_cap,
         "predicted_visitors": predicted_visitors,
         "original_crowd_score": crowd_score,
@@ -58,13 +84,27 @@ def simulate_capacity_cap(destination_id: str, proposed_cap: int):
     if overflow_count > 0:
         result["recommendation"] = f"Warning: {overflow_count} visitors exceed the proposed cap. Consider redirecting overflow."
         try:
-            rec_resp = httpx.get(f"http://127.0.0.1:8000/recommend/{destination_id}", timeout=5.0)
-            rec_data = rec_resp.json()
-            alts = rec_data.get("alternatives", [])
-            if alts:
-                result["redirect_suggestion"] = alts[0]
+            from recommender import CrowdRecommender
+            rec = CrowdRecommender()
+            rec_res = rec.recommend(destination_id, force_alternatives=True)
+            if rec_res.alternatives:
+                top = rec_res.alternatives[0]
+                result["redirect_suggestion"] = {
+                    "destination_id": top.destination_id,
+                    "name": top.name,
+                    "distance_km": top.distance_km,
+                    "crowd_category": top.crowd_category,
+                    "reason": top.reason
+                }
         except Exception:
-            pass
+            try:
+                rec_resp = httpx.get(f"http://127.0.0.1:8000/ui2/recommend/{destination_id}?force_alternatives=true", timeout=5.0)
+                rec_data = rec_resp.json()
+                alts = rec_data.get("alternatives", [])
+                if alts:
+                    result["redirect_suggestion"] = alts[0]
+            except Exception:
+                pass
     else:
         result["recommendation"] = "Cap is workable. Current predicted visitors fall within limits."
 

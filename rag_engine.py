@@ -5,6 +5,8 @@ import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
 
 import numpy as np
 from knowledge_builder import build_knowledge_base
@@ -27,7 +29,10 @@ class RAGEngine:
             except Exception:
                 pass
             from sentence_transformers import SentenceTransformer
-            self._encoder = SentenceTransformer(self.model_name)
+            try:
+                self._encoder = SentenceTransformer(self.model_name, local_files_only=True)
+            except Exception:
+                self._encoder = SentenceTransformer(self.model_name)
         return self._encoder
 
     def load_knowledge_base(self):

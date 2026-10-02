@@ -305,22 +305,29 @@ function updateScaleMarker(score) {
 function updateBestTime(forecast) {
   if (!forecast || !forecast.length) return;
 
-  const best = forecast.reduce((a, b) =>
-    a.crowd_score <= b.crowd_score ? a : b
-  );
+  const best = forecast.reduce((a, b) => {
+    const scoreA = (a.crowd_score !== undefined && a.crowd_score !== null) ? a.crowd_score : 50;
+    const scoreB = (b.crowd_score !== undefined && b.crowd_score !== null) ? b.crowd_score : 50;
+    return scoreA <= scoreB ? a : b;
+  });
 
   const dateObj = new Date(best.date + "T00:00:00");
-  const formatted = dateObj.toLocaleDateString("en-IN", {
-    weekday: "long",
-    month: "short",
-    day: "numeric",
-  });
+  const formatted = !isNaN(dateObj.getTime())
+    ? dateObj.toLocaleDateString("en-IN", {
+        weekday: "long",
+        month: "short",
+        day: "numeric",
+      })
+    : best.date;
+
+  const dayStr = best.day_of_week || (!isNaN(dateObj.getTime()) ? dateObj.toLocaleDateString("en-IN", { weekday: "long" }) : "");
+  const scoreVal = (best.crowd_score !== undefined && best.crowd_score !== null) ? best.crowd_score : (best.crowd_category === 'Low' ? 30 : 60);
 
   document.getElementById("bestTimeDate").textContent = formatted;
   document.getElementById("bestTimeDetail").textContent =
-    `${best.day_of_week}${best.is_holiday ? " (Holiday — expect higher crowds nearby)" : ""} · Lowest predicted crowd in the next 7 days`;
+    `${dayStr}${best.is_holiday ? " (Holiday — expect higher crowds nearby)" : ""} · Lowest predicted crowd in the next 7 days`;
   document.getElementById("bestTimeScore").textContent =
-    `${best.crowd_score}/100 · ${displayLevel(best.crowd_category, best.crowd_score)}`;
+    `${scoreVal}/100 · ${displayLevel(best.crowd_category, scoreVal)}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -401,6 +408,26 @@ async function openDetail(destId) {
     document.getElementById("intelPanel").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  // Reset confidence and best time loading state
+  document.getElementById("detailConfidence").textContent = "—";
+  document.getElementById("bestTimeDate").textContent = "—";
+  document.getElementById("bestTimeDetail").textContent = "Analyzing 7-day forecast…";
+  document.getElementById("bestTimeScore").textContent = "—";
+
+  // Fetch forecast in parallel for Model Confidence and Best Time
+  apiGet(`/forecast/${destId}`)
+    .then((forecast) => {
+      currentForecast = forecast;
+      if (forecast && forecast[0]) {
+        document.getElementById("detailConfidence").textContent =
+          `${Math.round((forecast[0].confidence || 0.85) * 100)}%`;
+      }
+      updateBestTime(forecast);
+    })
+    .catch((err) => {
+      console.warn("Forecast fetch warning:", err);
+    });
+
   // UI 2 Recommendation logic
   const forceAlternatives = document.getElementById("forceAlternatives").checked;
   const container = document.getElementById("alternativesContainer");
@@ -409,8 +436,10 @@ async function openDetail(destId) {
   try {
     const result = await apiGet(`/ui2/recommend/${destId}?force_alternatives=${forceAlternatives}`);
     
-    // Update Best Time
-    updateBestTime(result.alternate_time_slots);
+    // If forecast hasn't loaded yet and alternate time slots exist, display them
+    if (result.alternate_time_slots && result.alternate_time_slots.length > 0 && (!currentForecast || !currentForecast.length)) {
+      updateBestTime(result.alternate_time_slots);
+    }
     
     // Render Alternatives
     renderRecommendations(result.alternatives, result.is_overcrowded);

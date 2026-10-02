@@ -28,10 +28,6 @@ predictor = FootprintPredictor()
 async def lifespan(app: FastAPI):
     """Load model once at startup — not on every request."""
     predictor.load()
-    try:
-        list_destinations()
-    except Exception:
-        pass
     yield
 
 

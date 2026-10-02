@@ -21,6 +21,8 @@ class AlternativeRecommendationModel(BaseModel):
 class TimeSlotSuggestionModel(BaseModel):
     date: str
     crowd_category: str
+    crowd_score: Optional[int] = None
+    day_of_week: Optional[str] = None
 
 class RecommendationResponse(BaseModel):
     original_destination: Dict[str, Any]
@@ -51,7 +53,9 @@ def get_recommendations(destination_id: str, force_alternatives: bool = Query(Fa
         alternate_time_slots = [
             TimeSlotSuggestionModel(
                 date=slot.date,
-                crowd_category=slot.crowd_category
+                crowd_category=slot.crowd_category,
+                crowd_score=getattr(slot, "crowd_score", None),
+                day_of_week=getattr(slot, "day_of_week", None),
             ) for slot in result.alternate_time_slots
         ]
         

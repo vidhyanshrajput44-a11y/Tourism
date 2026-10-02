@@ -43,21 +43,30 @@ async function apiPost(path, body) {
     return res.json();
 }
 
-// Tab Logic
+// Tab Logic with bold prominent states
 function bindTabs() {
     const tabs = ["Upload", "Points", "Redeem"];
     tabs.forEach(t => {
-        document.getElementById(`tab${t}`).addEventListener("click", () => {
+        const btn = document.getElementById(`tab${t}`);
+        if (!btn) return;
+        btn.addEventListener("click", () => {
             tabs.forEach(x => {
-                document.getElementById(`tab${x}`).classList.remove("active");
-                document.getElementById(`tab${x}`).style.color = "var(--text-muted)";
-                document.getElementById(`tab${x}`).style.borderBottom = "none";
-                document.getElementById(`sec${x}`).style.display = "none";
+                const b = document.getElementById(`tab${x}`);
+                const sec = document.getElementById(`sec${x}`);
+                if (b) {
+                    b.classList.remove("active");
+                    b.style.background = "transparent";
+                    b.style.color = "#334155";
+                    b.style.boxShadow = "none";
+                }
+                if (sec) sec.style.display = "none";
             });
-            document.getElementById(`tab${t}`).classList.add("active");
-            document.getElementById(`tab${t}`).style.color = "var(--text-primary)";
-            document.getElementById(`tab${t}`).style.borderBottom = "2px solid var(--accent-dark)";
-            document.getElementById(`sec${t}`).style.display = "block";
+            btn.classList.add("active");
+            btn.style.background = "#0f172a";
+            btn.style.color = "#ffffff";
+            btn.style.boxShadow = "0 4px 12px rgba(15,23,42,0.18)";
+            const secTarget = document.getElementById(`sec${t}`);
+            if (secTarget) secTarget.style.display = "block";
             
             if (t === "Points") loadPoints();
             if (t === "Redeem") loadRedeem();
@@ -65,16 +74,54 @@ function bindTabs() {
     });
 }
 
-// Section 1: Upload
+// Curated Destination and Monument Image Datasets
+const DEST_PHOTO_MAP = {
+  taj_mahal: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80",
+  jaipur_city_palace: "https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1000&q=80",
+  goa_baga_beach: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1000&q=80",
+  kerala_backwaters: "https://images.unsplash.com/photo-1593693401060-9fc28cf9e368?auto=format&fit=crop&w=1000&q=80",
+  varanasi_ghats: "https://images.unsplash.com/photo-1561359313-0639aad073f0?auto=format&fit=crop&w=1000&q=80",
+  hampi_ruins: "https://images.unsplash.com/photo-1722934804353-0d9f6a55ab5e?auto=format&fit=crop&w=1000&q=80",
+  manali: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1000&q=80",
+  mysore_palace: "https://images.unsplash.com/photo-1611510338559-2f463335092c?auto=format&fit=crop&w=1000&q=80",
+  kempty_falls: "images/kempty_falls.jpg",
+  robbers_cave: "images/robbers_cave.jpg",
+};
+
+function getDestImage(destId) {
+  return DEST_PHOTO_MAP[destId] || "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1000&q=80";
+}
+
+// Section 1: Upload & Photography Journey
 async function loadDestinations() {
     try {
         const dests = await apiGet("/destinations");
         const progress = await apiGet(`/rewards/progress-overview/${currentUserId}`);
         
-        // Update global progress
+        // Update global progress with modern progress bar
         const pGlobal = progress.global_progress;
-        document.querySelector("#globalProgress div:nth-child(2)").innerHTML = 
-            `<b>${pGlobal.captured_monuments}/${pGlobal.total_monuments}</b> heritage sites captured across India`;
+        const globalPct = Math.round((pGlobal.captured_monuments / (pGlobal.total_monuments || 1)) * 100);
+        const globalEl = document.getElementById("globalProgress");
+        if (globalEl) {
+            globalEl.innerHTML = `
+                <div style="flex: 1;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin: 0 0 0.25rem 0; color: var(--text-primary);">Heritage Photography Journey</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Photograph authentic Indian monuments & hidden gems to earn hotel discounts</p>
+                        </div>
+                        <div style="text-align: right; background: #f8fafc; padding: 0.5rem 1rem; border-radius: 10px; border: 1px solid var(--border);">
+                            <span style="font-size: 1.4rem; font-weight: 800; color: var(--accent-dark);">${pGlobal.captured_monuments}</span>
+                            <span style="color: var(--text-muted); font-size: 0.95rem;"> / ${pGlobal.total_monuments}</span>
+                            <span style="font-size: 0.75rem; font-weight: 600; color: #10b981; margin-left: 0.35rem; text-transform: uppercase;">(${globalPct}% Captured)</span>
+                        </div>
+                    </div>
+                    <div style="width: 100%; height: 8px; background: #f1f5f9; border-radius: 999px; overflow: hidden; margin-top: 0.75rem; border: 1px solid #e2e8f0;">
+                        <div style="width: ${globalPct}%; height: 100%; background: linear-gradient(90deg, #10b981, #06b6d4); transition: width 0.5s ease;"></div>
+                    </div>
+                </div>
+            `;
+        }
             
         const grid = document.getElementById("destOverviewGrid");
         grid.innerHTML = "";
@@ -83,30 +130,70 @@ async function loadDestinations() {
             const destProgress = progress.destinations.find(x => x.destination_id === d.destination_id);
             if (!destProgress) return;
             
+            const pct = Math.round((destProgress.captured_monuments / (destProgress.total_monuments || 1)) * 100);
+            const isAllCaptured = destProgress.captured_monuments === destProgress.total_monuments && destProgress.total_monuments > 0;
+            const destImg = getDestImage(d.destination_id);
+            
             const card = document.createElement("div");
             card.style.background = "white";
-            card.style.borderRadius = "12px";
+            card.style.borderRadius = "16px";
             card.style.border = "1px solid var(--border)";
             card.style.overflow = "hidden";
             card.style.cursor = "pointer";
-            card.style.transition = "transform 0.2s, box-shadow 0.2s";
-            card.onmouseover = () => { card.style.transform = "translateY(-4px)"; card.style.boxShadow = "var(--shadow-md)"; };
-            card.onmouseout = () => { card.style.transform = "none"; card.style.boxShadow = "none"; };
+            card.style.transition = "transform 0.25s ease, box-shadow 0.25s ease";
+            card.style.display = "flex";
+            card.style.flexDirection = "column";
+            card.style.boxShadow = "0 2px 6px rgba(0,0,0,0.04)";
+            
+            card.onmouseover = () => {
+                card.style.transform = "translateY(-5px)";
+                card.style.boxShadow = "0 12px 24px -4px rgba(0,0,0,0.1)";
+                const img = card.querySelector(".dest-card-img");
+                if (img) img.style.transform = "scale(1.05)";
+            };
+            card.onmouseout = () => {
+                card.style.transform = "none";
+                card.style.boxShadow = "0 2px 6px rgba(0,0,0,0.04)";
+                const img = card.querySelector(".dest-card-img");
+                if (img) img.style.transform = "scale(1)";
+            };
             card.onclick = () => showDestinationDetail(d, destProgress, progress.captured_monument_ids);
             
             card.innerHTML = `
-                <div style="height: 140px; background: #e2e8f0; position: relative;">
-                    <img src="${getFallbackImage(d.category)}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80'" />
-                </div>
-                <div style="padding: 1.25rem;">
-                    <h3 style="font-size: 1.1rem; margin: 0 0 0.5rem 0;">${d.name}</h3>
-                    <div style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">${d.city}, ${d.state}</div>
+                <div style="height: 160px; background: #0f172a; position: relative; overflow: hidden;">
+                    <img class="dest-card-img" src="${destImg}" alt="${d.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease;" onerror="this.src='https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80'" />
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.7) 0%, transparent 60%);"></div>
                     
-                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; padding-top: 1rem; border-top: 1px solid var(--border);">
-                        <span style="color: var(--text-muted);">${destProgress.total_monuments} monuments</span>
-                        <span style="font-weight: 600; color: ${destProgress.captured_monuments === destProgress.total_monuments ? '#10b981' : 'var(--accent-dark)'};">
-                            ${destProgress.captured_monuments}/${destProgress.total_monuments} captured
-                        </span>
+                    <!-- Location Pill -->
+                    <div style="position: absolute; top: 0.75rem; left: 0.75rem; background: rgba(15,23,42,0.75); backdrop-filter: blur(4px); color: white; padding: 0.25rem 0.65rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; display: flex; align-items: center; gap: 0.3rem;">
+                        📍 ${d.city}
+                    </div>
+
+                    <!-- Points Badge -->
+                    <div style="position: absolute; top: 0.75rem; right: 0.75rem; background: #fef3c7; color: #92400e; padding: 0.25rem 0.65rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        ✨ Up to ${destProgress.total_points_possible || 600} pts
+                    </div>
+                </div>
+                <div style="padding: 1.25rem; display: flex; flex-direction: column; flex: 1;">
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.35rem 0;">${d.name}</h3>
+                    <div style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">${d.city}, ${d.state}</div>
+                    
+                    <!-- Progress Section -->
+                    <div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; margin-bottom: 0.4rem;">
+                            <span style="color: var(--text-muted);">${destProgress.total_monuments} Heritage Spots</span>
+                            <span style="font-weight: 600; color: ${isAllCaptured ? '#10b981' : 'var(--accent-dark)'};">
+                                ${isAllCaptured ? '✅ All Captured' : `${destProgress.captured_monuments}/${destProgress.total_monuments} captured`}
+                            </span>
+                        </div>
+                        <div style="width: 100%; height: 6px; background: #f1f5f9; border-radius: 999px; overflow: hidden; border: 1px solid #e2e8f0;">
+                            <div style="width: ${pct}%; height: 100%; background: ${isAllCaptured ? '#10b981' : 'linear-gradient(90deg, #f59e0b, #ef4444)'};"></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 0.75rem; display: flex; align-items: center; justify-content: space-between; color: var(--accent-dark); font-size: 0.8rem; font-weight: 600;">
+                        <span>Explore Sites</span>
+                        <span>→</span>
                     </div>
                 </div>
             `;
@@ -115,18 +202,8 @@ async function loadDestinations() {
         
     } catch(err) {
         console.error(err);
-        document.getElementById("destOverviewGrid").innerHTML = '<div style="color: red;">Failed to load destinations.</div>';
+        document.getElementById("destOverviewGrid").innerHTML = '<div style="color: red; padding: 1rem;">Failed to load destinations.</div>';
     }
-}
-
-function getFallbackImage(category) {
-    const map = {
-        "heritage": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80",
-        "beach": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80",
-        "religious": "https://images.unsplash.com/photo-1561359313-0639aad073f0?auto=format&fit=crop&w=800&q=80",
-        "hill-station": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80"
-    };
-    return map[category] || map["heritage"];
 }
 
 function showDestinationDetail(dest, destProgress, capturedIds) {
@@ -136,8 +213,8 @@ function showDestinationDetail(dest, destProgress, capturedIds) {
     document.getElementById("destDetailView").style.display = "block";
     
     document.getElementById("destHeroName").textContent = dest.name;
-    document.getElementById("destHeroCity").textContent = `${dest.city}, ${dest.state}`;
-    document.getElementById("destHeroImg").src = getFallbackImage(dest.category);
+    document.getElementById("destHeroCity").textContent = `${dest.city}, ${dest.state} · ${destProgress.total_monuments} Heritage Sites · Up to ${destProgress.total_points_possible || 600} Points`;
+    document.getElementById("destHeroImg").src = getDestImage(dest.destination_id);
     
     document.getElementById("btnBackOverview").onclick = () => {
         document.getElementById("destDetailView").style.display = "none";
@@ -151,16 +228,17 @@ function showDestinationDetail(dest, destProgress, capturedIds) {
 
 async function loadMonuments(destId, capturedIds) {
     const grid = document.getElementById("monumentGrid");
-    grid.innerHTML = '<div class="loading-state">Loading monuments...</div>';
+    grid.innerHTML = '<div class="loading-state">Loading monuments & hidden gems...</div>';
     try {
         const monuments = await apiGet(`/rewards/monuments/${destId}`);
         if(monuments.length === 0) {
-            grid.innerHTML = '<div style="color: var(--text-muted);">No monuments available here yet.</div>';
+            grid.innerHTML = '<div style="color: var(--text-muted); padding: 1.5rem;">No monuments available here yet.</div>';
             return;
         }
         
-        grid.innerHTML = monuments.map(m => {
+        grid.innerHTML = monuments.map((m, index) => {
             const isCaptured = capturedIds.includes(m.monument_id);
+            const monumentImg = m.image_url || getDestImage(destId);
             
             let badgeHtml = "";
             let btnHtml = "";
@@ -168,44 +246,58 @@ async function loadMonuments(destId, capturedIds) {
             
             if (isCaptured) {
                 overlayHtml = `<div style="position: absolute; inset: 0; background: rgba(255,255,255,0.7); z-index: 10; pointer-events: none;"></div>`;
-                badgeHtml = `<div style="position: absolute; top: 1rem; right: 1rem; background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; z-index: 11; display: flex; align-items: center; gap: 0.25rem;">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                badgeHtml = `<div style="position: absolute; top: 0.75rem; right: 0.75rem; background: #10b981; color: white; padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; z-index: 11; display: flex; align-items: center; gap: 0.35rem; box-shadow: 0 2px 6px rgba(16,185,129,0.3);">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     Captured
                 </div>`;
-                btnHtml = `<button disabled style="width: 100%; padding: 0.75rem; background: #e2e8f0; color: var(--text-muted); border: none; border-radius: 8px; font-weight: 600; cursor: not-allowed; display: flex; justify-content: center; align-items: center; gap: 0.5rem; z-index: 11; position: relative;">
-                    Already Photographed
+                btnHtml = `
+                <button disabled style="width: 100%; padding: 0.75rem; background: #e2e8f0; color: var(--text-muted); border: none; border-radius: 10px; font-weight: 600; cursor: not-allowed; display: flex; justify-content: center; align-items: center; gap: 0.5rem; z-index: 11; position: relative;">
+                    ✅ Already Photographed
                 </button>`;
             } else {
-                badgeHtml = `<div style="position: absolute; top: 1rem; right: 1rem; background: #fef3c7; color: #b45309; padding: 0.2rem 0.6rem; border-radius: 999px; font-weight: bold; font-size: 0.8rem; z-index: 11;">
-                    ${m.points_value} pts
+                badgeHtml = `<div style="position: absolute; top: 0.75rem; right: 0.75rem; background: #fef3c7; color: #92400e; padding: 0.3rem 0.8rem; border-radius: 999px; font-weight: 800; font-size: 0.8rem; z-index: 11; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+                    +${m.points_value} pts
                 </div>`;
-                btnHtml = `<button onclick="openCamera('${m.monument_id}', '${m.name.replace("'", "\\'")}')" style="width: 100%; padding: 0.75rem; background: var(--accent-dark); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 0.5rem; z-index: 11; position: relative;">
-                    📸 Take Photo
-                </button>`;
+                btnHtml = `
+                <div style="display: flex; gap: 0.5rem; width: 100%;">
+                    <button onclick="openCamera('${m.monument_id}', '${m.name.replace("'", "\\'")}')" style="flex: 1; padding: 0.7rem 0.5rem; background: var(--accent-dark); color: white; border: none; border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 0.35rem; z-index: 11; position: relative; transition: opacity 0.2s;">
+                        📸 Camera
+                    </button>
+                    <button onclick="document.getElementById('file_${m.monument_id}').click()" style="flex: 1; padding: 0.7rem 0.5rem; background: #f1f5f9; color: var(--text-primary); border: 1px solid var(--border); border-radius: 8px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 0.35rem; z-index: 11; position: relative; transition: background 0.2s;">
+                        📁 Upload
+                    </button>
+                </div>`;
             }
             
             return `
-            <div style="background: white; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; position: relative; display: flex; flex-direction: column;">
+            <div style="background: white; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; position: relative; display: flex; flex-direction: column; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.2s ease;">
                 ${overlayHtml}
                 ${badgeHtml}
-                <div style="height: 160px; background: #f1f5f9; display: flex; align-items: center; justify-content: center;">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+
+                <!-- Monument Image -->
+                <div style="height: 190px; background: #0f172a; position: relative; overflow: hidden;">
+                    <img src="${monumentImg}" alt="${m.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='${getDestImage(destId)}'" />
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.7) 0%, transparent 60%);"></div>
+                    <div style="position: absolute; bottom: 0.75rem; left: 0.75rem; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); color: white; padding: 0.2rem 0.55rem; border-radius: 6px; font-size: 0.75rem; font-weight: 500;">
+                        Site #${index + 1}
+                    </div>
                 </div>
-                <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1;">
-                    <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">${m.name}</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; flex-grow: 1;">${m.description}</p>
+
+                <div style="padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1;">
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin: 0 0 0.4rem 0;">${m.name}</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.4; margin-bottom: 1.25rem; flex-grow: 1;">${m.description}</p>
                     
                     <input type="file" id="file_${m.monument_id}" accept="image/*" capture="environment" style="display: none;" onchange="handleUpload('${m.monument_id}')">
-                    <img id="preview_${m.monument_id}" src="" style="display:none; width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--border); position: relative; z-index: 11;" />
+                    <img id="preview_${m.monument_id}" src="" style="display:none; width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--border); position: relative; z-index: 11;" />
                     
                     ${btnHtml}
                     
-                    <div id="res_${m.monument_id}" style="margin-top: 1rem; display: none; font-size: 0.9rem; padding: 0.75rem; border-radius: 6px; position: relative; z-index: 11;"></div>
+                    <div id="res_${m.monument_id}" style="margin-top: 1rem; display: none; font-size: 0.85rem; padding: 0.75rem; border-radius: 8px; position: relative; z-index: 11;"></div>
                 </div>
             </div>
         `}).join("");
     } catch(err) {
-        grid.innerHTML = `<div style="color: red;">Error: ${err.message}</div>`;
+        grid.innerHTML = `<div style="color: red; padding: 1rem;">Error: ${err.message}</div>`;
     }
 }
 
@@ -286,49 +378,126 @@ async function loadPoints() {
     }
 }
 
-// Section 3: Redeem
+// Section 3: Redeem & Hotel Bookings
 async function loadRedeem() {
     const grid = document.getElementById("redeemGrid");
     grid.innerHTML = '<div class="loading-state">Loading rewards...</div>';
     try {
         const tiers = await apiGet(`/rewards/available-tiers/${currentUserId}`);
         
-        grid.innerHTML = tiers.map(t => `
-            <div style="background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; text-align: center;">
-                <div style="font-size: 2rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 0.5rem;">${t.discount_pct}% OFF</div>
-                <div style="color: var(--text-secondary); margin-bottom: 1.5rem;">Hotel Bookings</div>
-                <button 
-                    onclick="doRedeem('${t.tier_id}')" 
-                    ${!t.is_eligible ? 'disabled' : ''}
-                    style="width: 100%; padding: 0.75rem; background: ${t.is_eligible ? 'var(--accent-dark)' : '#e2e8f0'}; color: ${t.is_eligible ? 'white' : '#94a3b8'}; border: none; border-radius: 8px; font-weight: 600; cursor: ${t.is_eligible ? 'pointer' : 'not-allowed'};">
-                    ${t.is_eligible ? `Redeem (${t.points_required} pts)` : `Need ${t.points_required} pts`}
-                </button>
+        grid.innerHTML = tiers.map(t => {
+            const isMax = t.discount_pct === 10;
+            const badgeText = isMax ? '⭐ Max Allowed Coupon (10%)' : 'Verified Partner Voucher';
+            const badgeBg = isMax ? '#fef3c7' : '#f1f5f9';
+            const badgeColor = isMax ? '#92400e' : '#475569';
+            
+            return `
+            <div class="coupon-card" style="background: white; border: 2px solid ${isMax ? '#f59e0b' : 'var(--border)'}; border-radius: 16px; padding: 2rem 1.5rem; text-align: center; position: relative; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s ease, box-shadow 0.2s ease;">
+                
+                <!-- Notch ornament -->
+                <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); background: #f8fafc; border: 1px solid var(--border); border-top: none; width: 60px; height: 10px; border-radius: 0 0 10px 10px;"></div>
+
+                <div>
+                    <div style="display: inline-block; background: ${badgeBg}; color: ${badgeColor}; padding: 0.3rem 0.85rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1.25rem;">
+                        ${badgeText}
+                    </div>
+                    
+                    <div style="font-size: 3rem; font-weight: 900; color: var(--accent-dark); line-height: 1; margin-bottom: 0.5rem; font-family: 'Instrument Serif', Georgia, serif;">
+                        ${t.discount_pct}% OFF
+                    </div>
+                    
+                    <div style="font-weight: 700; color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.25rem;">Hotel Bookings</div>
+                    <div style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1.5rem;">Valid on all partner stays across India</div>
+                </div>
+
+                <div>
+                    <div style="font-size: 0.85rem; color: #b45309; font-weight: 700; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.3rem;">
+                        ✨ Requires ${t.points_required} Points
+                    </div>
+
+                    <button 
+                        id="btn_redeem_${t.tier_id}"
+                        onclick="doRedeem('${t.tier_id}')" 
+                        style="width: 100%; padding: 0.9rem; background: var(--accent-dark); color: white; border: none; border-radius: 12px; font-weight: 800; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.5rem; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 4px 12px rgba(15,23,42,0.18);">
+                        <span>🎁 Redeem Voucher</span>
+                    </button>
+
+                    <!-- Reveal code block -->
+                    <div id="code_box_${t.tier_id}" style="display: none; margin-top: 1rem; padding: 1rem; background: #f0fdf4; border: 2px dashed #16a34a; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 0.75rem; font-weight: 700; color: #166534; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">Redeem Code:</div>
+                        <div id="code_val_${t.tier_id}" style="font-family: monospace; font-size: 1.25rem; font-weight: 900; color: #15803d; margin: 0.35rem 0; letter-spacing: 1.5px;"></div>
+                        <button onclick="copyVoucherCode('${t.tier_id}')" id="copy_btn_${t.tier_id}" style="padding: 0.45rem 1rem; background: #16a34a; color: white; border: none; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 2px 6px rgba(22,163,74,0.3);">
+                            📋 Copy Code
+                        </button>
+                        <div style="font-size: 0.75rem; color: #166534; margin-top: 0.5rem;">✅ ${t.discount_pct}% discount code ready to apply</div>
+                    </div>
+                </div>
             </div>
-        `).join("");
+            `;
+        }).join("");
     } catch(err) {
-        grid.innerHTML = `<div style="color: red;">Error: ${err.message}</div>`;
+        grid.innerHTML = `<div style="color: red; padding: 1rem;">Error: ${err.message}</div>`;
     }
 }
 
 async function doRedeem(tierId) {
+    const btn = document.getElementById(`btn_redeem_${tierId}`);
+    if (btn) {
+        btn.textContent = "Generating Code...";
+        btn.style.opacity = "0.7";
+        btn.disabled = true;
+    }
     try {
         const res = await apiPost("/rewards/redeem", { user_id: currentUserId, tier_id: tierId });
         currentDiscount = res;
         
+        // Show code directly inside the coupon card
+        const codeBox = document.getElementById(`code_box_${tierId}`);
+        const codeVal = document.getElementById(`code_val_${tierId}`);
+        if (codeBox && codeVal) {
+            codeVal.textContent = res.discount_code;
+            codeBox.style.display = "block";
+        }
+        if (btn) {
+            btn.style.display = "none";
+        }
+        
+        // Update booking section below
         document.getElementById("activeCode").textContent = res.discount_code;
         document.getElementById("bookingActions").style.display = "block";
         document.getElementById("mockConfirmation").style.display = "none";
         
         // Setup MMT Link
-        const destId = currentDestId || "taj_mahal"; // fallback if they haven't selected one
+        const destId = currentDestId || "taj_mahal";
         const mmtRes = await apiGet(`/rewards/book/makemytrip-link?destination_id=${destId}`);
         document.getElementById("btnMmt").href = mmtRes.url;
         
-        // Reload points header
-        loadPoints(); // silent refresh
+        // Refresh balance display
+        loadPoints();
     } catch(err) {
+        if (btn) {
+            btn.textContent = "🎁 Redeem Voucher";
+            btn.style.opacity = "1";
+            btn.disabled = false;
+        }
         alert("Redemption failed: " + err.message);
     }
+}
+
+function copyVoucherCode(tierId) {
+    const codeEl = document.getElementById(`code_val_${tierId}`);
+    if (!codeEl) return;
+    const text = codeEl.textContent.trim();
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById(`copy_btn_${tierId}`);
+        if (btn) {
+            btn.textContent = "✅ Copied!";
+            setTimeout(() => { btn.textContent = "📋 Copy Code"; }, 2500);
+        }
+    }).catch(() => {
+        const btn = document.getElementById(`copy_btn_${tierId}`);
+        if (btn) btn.textContent = "✅ Copied!";
+    });
 }
 
 async function doMockBooking() {

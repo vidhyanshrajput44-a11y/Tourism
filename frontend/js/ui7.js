@@ -1,3 +1,35 @@
+const API_BASE = (window.location.protocol === "http:" || window.location.protocol === "https:")
+  ? (window.location.port === "5500" || window.location.port === "3000" ? "http://127.0.0.1:8000" : window.location.origin)
+  : "http://127.0.0.1:8000";
+
+// --- API Helpers ---
+async function apiGet(endpoint) {
+  const res = await fetch(`${API_BASE}${endpoint}`);
+  if (!res.ok) throw new Error(`API error: ${res.statusText}`);
+  return await res.json();
+}
+
+async function apiPost(endpoint, payload) {
+  const res = await fetch(`${API_BASE}${endpoint}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(text || res.statusText);
+  }
+  return await res.json();
+}
+
+function setApiStatus(isOnline, text) {
+  const statusEl = document.getElementById("apiStatus");
+  if (!statusEl) return;
+  statusEl.className = isOnline ? "nav-status online" : "nav-status offline";
+  const label = statusEl.querySelector(".status-label");
+  if (label) label.textContent = text;
+}
+
 let conversationHistory = [];
 let conversationId = "conv_" + Math.random().toString(36).substr(2, 9);
 
@@ -186,49 +218,28 @@ async function init() {
     const health = await apiGet("/health");
     setApiStatus(true, `RAG ENGINE · Online`);
     
-    document.getElementById("statUpdated").textContent = new Date().toLocaleTimeString("en-IN", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+    const statUpdated = document.getElementById("statUpdated");
+    if (statUpdated) {
+      statUpdated.textContent = new Date().toLocaleTimeString("en-IN", {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+    }
 
     fetchSampleQuestions();
 
   } catch (err) {
     setApiStatus(false, "Offline");
-    document.getElementById("chatError").textContent = "Cannot connect to API. Run uvicorn api:app --reload";
-    document.getElementById("chatError").hidden = false;
+    const errEl = document.getElementById("chatError");
+    if (errEl) {
+      errEl.textContent = "Cannot connect to API. Please ensure the backend server is running.";
+      errEl.hidden = false;
+    }
   }
 }
 
-init();
-
-const API_BASE = (window.location.protocol === "http:" || window.location.protocol === "https:")
-  ? (window.location.port === "5500" || window.location.port === "3000" ? "http://127.0.0.1:8000" : window.location.origin)
-  : "http://127.0.0.1:8000";
-
-// --- API Helpers (copied from shared logic) ---
-async function apiGet(endpoint) {
-  const res = await fetch(`${API_BASE}${endpoint}`);
-  if (!res.ok) throw new Error(`API error: ${res.statusText}`);
-  return await res.json();
-}
-
-async function apiPost(endpoint, payload) {
-  const res = await fetch(`${API_BASE}${endpoint}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(text || res.statusText);
-  }
-  return await res.json();
-}
-
-function setApiStatus(isOnline, text) {
-  const statusEl = document.getElementById("apiStatus");
-  if (!statusEl) return;
-  statusEl.className = isOnline ? "nav-status online" : "nav-status offline";
-  statusEl.querySelector(".status-label").textContent = text;
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
 }

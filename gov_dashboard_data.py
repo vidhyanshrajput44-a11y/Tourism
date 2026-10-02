@@ -16,12 +16,29 @@ DESTINATION_COORDS = {
 POLICY_LOG = []
 
 def get_heatmap_data():
+    dests = []
     try:
-        resp = httpx.get("http://127.0.0.1:8000/destinations", timeout=5.0)
-        dests = resp.json()
-    except Exception as e:
-        print(f"Error fetching destinations for heatmap: {e}")
-        return []
+        from model import FootprintPredictor
+        from datetime import date
+        predictor = FootprintPredictor()
+        predictor.load()
+        today = date.today().isoformat()
+        for dest_id, meta in predictor.destinations.items():
+            pred = predictor.predict_single(dest_id, today)
+            dests.append({
+                "destination_id": dest_id,
+                "name": meta["name"],
+                "current_crowd_score": pred["crowd_score"],
+                "current_crowd_category": pred["crowd_category"],
+                "max_capacity": meta["max_capacity"]
+            })
+    except Exception:
+        try:
+            resp = httpx.get("http://127.0.0.1:8000/destinations", timeout=5.0)
+            dests = resp.json()
+        except Exception as e:
+            print(f"Error fetching destinations for heatmap: {e}")
+            return []
 
     import random
     

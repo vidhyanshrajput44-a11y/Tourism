@@ -138,9 +138,8 @@ class FootprintPredictor:
         weather_temp: float = 28.0,
         weather_condition: str = "sunny",
     ) -> pd.DataFrame:
-        """Construct a single feature row for a future date."""
-        dest_hist = self.history[self.history["destination_id"] == destination_id].copy()
-        dest_hist = dest_hist.sort_values("date")
+        # Use recent history (last 45 days) to compute lag_1/7/30 & rolling_7/30 instantly
+        dest_hist = self.history[self.history["destination_id"] == destination_id].sort_values("date").tail(45).copy()
 
         # Append a placeholder row for the target date
         holiday_flag = int(target_date.weekday() >= 5)  # simplified; real check below

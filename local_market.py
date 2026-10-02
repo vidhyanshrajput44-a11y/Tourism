@@ -9,15 +9,22 @@ def get_local_businesses(destination_id: str, category_filter: Optional[str] = N
     return sorted(businesses, key=lambda x: x.rating, reverse=True)
 
 def get_businesses_near_alternative(destination_id: str) -> List[LocalBusiness]:
-    # Call UI 2's recommendation endpoint
     try:
-        # We use force_alternatives to guarantee we get alternatives
+        from recommender import CrowdRecommender
+        rec = CrowdRecommender()
+        res = rec.recommend(destination_id, force_alternatives=True)
+        if res.alternatives:
+            top_alt_id = res.alternatives[0].destination_id
+            return get_local_businesses(top_alt_id)
+    except Exception:
+        pass
+
+    try:
         resp = httpx.get(f"http://127.0.0.1:8000/ui2/recommend/{destination_id}?force_alternatives=true", timeout=5.0)
         data = resp.json()
         alts = data.get("alternatives", [])
         if not alts:
             return []
-        # Get businesses for the top recommended alternative
         top_alt_id = alts[0]["destination_id"]
         return get_local_businesses(top_alt_id)
     except Exception as e:
